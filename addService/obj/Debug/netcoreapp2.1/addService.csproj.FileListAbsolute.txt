@@ -1,0 +1,14 @@
+/Users/adrian/Source/experiments/multiservice/addService/bin/Debug/netcoreapp2.1/addService.deps.json
+/Users/adrian/Source/experiments/multiservice/addService/bin/Debug/netcoreapp2.1/addService.runtimeconfig.json
+/Users/adrian/Source/experiments/multiservice/addService/bin/Debug/netcoreapp2.1/addService.runtimeconfig.dev.json
+/Users/adrian/Source/experiments/multiservice/addService/bin/Debug/netcoreapp2.1/addService.dll
+/Users/adrian/Source/experiments/multiservice/addService/bin/Debug/netcoreapp2.1/addService.pdb
+/Users/adrian/Source/experiments/multiservice/addService/obj/Debug/netcoreapp2.1/addService.csprojAssemblyReference.cache
+/Users/adrian/Source/experiments/multiservice/addService/obj/Debug/netcoreapp2.1/addService.csproj.CoreCompileInputs.cache
+/Users/adrian/Source/experiments/multiservice/addService/obj/Debug/netcoreapp2.1/addService.RazorAssemblyInfo.cache
+/Users/adrian/Source/experiments/multiservice/addService/obj/Debug/netcoreapp2.1/addService.RazorAssemblyInfo.cs
+/Users/adrian/Source/experiments/multiservice/addService/obj/Debug/netcoreapp2.1/addService.AssemblyInfoInputs.cache
+/Users/adrian/Source/experiments/multiservice/addService/obj/Debug/netcoreapp2.1/addService.AssemblyInfo.cs
+/Users/adrian/Source/experiments/multiservice/addService/obj/Debug/netcoreapp2.1/addService.RazorTargetAssemblyInfo.cache
+/Users/adrian/Source/experiments/multiservice/addService/obj/Debug/netcoreapp2.1/addService.dll
+/Users/adrian/Source/experiments/multiservice/addService/obj/Debug/netcoreapp2.1/addService.pdb
