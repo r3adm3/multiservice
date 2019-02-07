@@ -14,14 +14,13 @@
     <button onClick="operationFunction('minus')" >Minus</button>
     <button onClick="operationFunction('multiply')" >Multiply</button>
 
-<div id="Result"></div>
+<div id="result"></div>
 
 <script>
     function operationFunction(op) {
 
         var aNumber = document.getElementById("a").value
         var bNumber = document.getElementById("b").value
-        var result = 'none';
 
         if(op==='add'){var svcLink='http://localhost:18081/api/add?'}
         if(op==='minus'){var svcLink='http://localhost:18082/api/minus?'}
@@ -29,13 +28,12 @@
         
         var req = new XMLHttpRequest();
         req.open('GET', svcLink + 'a=' + aNumber + '&b=' +bNumber , true);
-        
-        req.setRequestHeader('Content-Type', 'application/json');
 
         req.onload = function () {
             if (req.status >= 200 && req.status < 400) {
-                console.log ('result' + req.responseText);
+                console.log ('result ' + req.responseText);
                 var result = req.responseText;
+                document.getElementById("result").innerHTML = "Result " + result;
             } else {
                 alert('Oh dear!');
             }
@@ -45,6 +43,6 @@
 
         }
 
-        document.getElementById("result").innerHTML = "Result " + result;
+      
 
 </script>
