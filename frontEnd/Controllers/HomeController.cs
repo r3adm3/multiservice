@@ -5,13 +5,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using frontEnd.Models;
+using Microsoft.Extensions.Configuration; 
 
 namespace frontEnd.Controllers
 {
     public class HomeController : Controller
     {
+        IConfiguration _configuration;
+
+        public HomeController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        } 
+
         public IActionResult Index()
         {
+            ViewBag.myData = _configuration["myFirstValue"];
+            ViewBag.addServiceLink = _configuration["addServiceLink"];
+            ViewBag.minusServiceLink = _configuration["minusServiceLink"];
+            ViewBag.multiplyServiceLink = _configuration["multiplyServiceLink"];
             return View();
         }
 

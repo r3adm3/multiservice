@@ -14,7 +14,10 @@
     <button onClick="operationFunction('minus')" >Minus</button>
     <button onClick="operationFunction('multiply')" >Multiply</button>
 
+<br /><br />
 <div id="result"></div>
+<br /><br />
+<p>@ViewBag.myData</p>
 
 <script>
     function operationFunction(op) {
@@ -22,10 +25,10 @@
         var aNumber = document.getElementById("a").value
         var bNumber = document.getElementById("b").value
 
-        if(op==='add'){var svcLink='http://localhost:18081/api/add?'}
-        if(op==='minus'){var svcLink='http://localhost:18082/api/minus?'}
-        if(op==='multiply'){var svcLink='http://localhost:18083/api/multiply?'}
-        
+        if(op==='add'){var svcLink='@(ViewBag.addServiceLink)'}
+        if(op==='minus'){var svcLink='@(ViewBag.minusServiceLink)'}
+        if(op==='multiply'){var svcLink='@(ViewBag.multiplyServiceLink)'}
+ 
         var req = new XMLHttpRequest();
         req.open('GET', svcLink + 'a=' + aNumber + '&b=' +bNumber , true);
 
