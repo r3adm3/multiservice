@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
 
-namespace addService.Controllers
+namespace multiplyService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -13,9 +13,9 @@ namespace addService.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<string> Get(int a, int b)
+        public ActionResult<int> Get(int a, int b)
         {
-            return (a * b).ToString();
+            return (a * b);
         }
 
     }
