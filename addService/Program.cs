@@ -12,11 +12,12 @@ namespace addService
 {
     public class Program
     {
+        //test comment to force a build
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
         }
-
+        
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
