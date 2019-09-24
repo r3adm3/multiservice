@@ -1,6 +1,6 @@
  # Sample contents of Dockerfile
  # Stage 1
- FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS builder
+ FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS builder
  WORKDIR /source
 
  # caches restore result by copying csproj file separately
