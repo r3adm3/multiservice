@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
+using multiservice.Models;
 
 namespace minusService.Controllers
 {
@@ -13,9 +14,13 @@ namespace minusService.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<int> Get(int a, int b)
+        public ActionResult<sharedMath> Get(int a, int b)
         {
-            return (a - b);
+            sharedMath myObj = new sharedMath();
+
+            myObj.mathresult = myObj.minusTwoNumbers(a,b);
+
+            return myObj;
         }
 
     }
