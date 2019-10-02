@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  addsvc:
+    image: daed.duckdns.org:50000/multiservice_addsvc
+    ports:
+      - "18081:80"
+  minussvc:
+    image: daed.duckdns.org:50000/multiservice_minussvc
+    ports:
+      - "18082:80"
+  multiplysvc:
+    image: daed.duckdns.org:50000/multiservice_multiplysvc
+    ports:
+      - "18083:80"
+  frontend:
+    image: daed.duckdns.org:50000/multiservice_frontend
+    ports:
+      - "18080:80"
