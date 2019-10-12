@@ -12,6 +12,7 @@ namespace frontEnd.Controllers
     public class HomeController : Controller
     {
         IConfiguration _configuration;
+       
 
         public HomeController(IConfiguration configuration)
         {

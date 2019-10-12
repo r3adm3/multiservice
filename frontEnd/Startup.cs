@@ -14,11 +14,10 @@ namespace frontEnd
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
-            Configuration = configuration;
-            var builder = new ConfigurationBuilder()
-                            .AddJsonFile("appsettings.json");
+            Configuration = configuration;                        
         }
 
         public IConfiguration Configuration { get; }
@@ -36,6 +35,7 @@ namespace frontEnd
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<IConfiguration>(Configuration);
+         
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
