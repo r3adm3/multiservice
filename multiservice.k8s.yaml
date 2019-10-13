@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myservice
+  labels:
+    app: myservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myservice
+  template:
+    metadata:
+      labels:
+        app: myservice
+    spec:
+      containers:
+      - image: daed.duckdns.org:50000/multiservice_frontend
+        name: multiservice-frontend
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
+          requests: 
+            memory: "1Gi"
+            cpu: "500m"
