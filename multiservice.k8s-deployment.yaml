@@ -26,3 +26,6 @@ spec:
           requests: 
             memory: "1Gi"
             cpu: "500m"
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Staging
