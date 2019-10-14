@@ -1,31 +1,90 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myservice
+  name: myservice-fe
   labels:
-    app: myservice
+    app: myservice-fe
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myservice
+      app: myservice-fe
   template:
     metadata:
       labels:
-        app: myservice
+        app: myservice-fe
     spec:
       containers:
       - image: daed.duckdns.org:50000/multiservice_frontend
-        name: multiservice-frontend
+        name: multiservice-fe
         ports:
         - containerPort: 80
-        resources:
-          limits:
-            memory: "2Gi"
-            cpu: "1000m"
-          requests: 
-            memory: "1Gi"
-            cpu: "500m"
         env:
         - name: ASPNETCORE_ENVIRONMENT
           value: Staging
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myservice-as
+  labels:
+    app: myservice-as
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myservice-as
+  template:
+    metadata:
+      labels:
+        app: myservice-as
+    spec:
+      containers:
+      - image: daed.duckdns.org:50000/multiservice_addsvc
+        name: multiservice-as
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myservice-mxs
+  labels:
+    app: myservice-mxs
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myservice-mxs
+  template:
+    metadata:
+      labels:
+        app: myservice-mxs
+    spec:
+      containers:
+      - image: daed.duckdns.org:50000/multiservice_multiplysvc
+        name: multiservice-mxs
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myservice-mis
+  labels:
+    app: myservice-mis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myservice-mis
+  template:
+    metadata:
+      labels:
+        app: myservice-mis
+    spec:
+      containers:
+      - image: daed.duckdns.org:50000/multiservice_minussvc
+        name: multiservice-mis
+        ports:
+        - containerPort: 80
