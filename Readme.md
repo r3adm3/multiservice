@@ -28,6 +28,12 @@ To run all containers that comprise this solution using docker-compose:
 docker-compose up
 ```
 
+or (rather than build each container locally, use the docker library version of each container)
+
+```docker
+docker-compose -f docker-compose-from-lib.yml up
+```
+
 ...and cleanup
 
 ```docker
@@ -52,4 +58,4 @@ kubectl delete -f multiservice.k8s-deployment.yaml
 minikube stop
 ```
 
-Test should be able to be run using a browser, and going to http://localhost:30500
+Test should be able to be run using a browser, and going to http://192.168.99.100:30500

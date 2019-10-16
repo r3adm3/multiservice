@@ -2,20 +2,20 @@ version: '3'
 
 services:
   addsvc:
-    image: daed.duckdns.org:50000/multiservice_addsvc
+    image: daed.duckdns.org:50000/multiservice_addsvc:latest
     deploy: 
       replicas: 2
     ports:
       - "18081:80"
   minussvc:
-    image: daed.duckdns.org:50000/multiservice_minussvc
+    image: daed.duckdns.org:50000/multiservice_minussvc:latest
     ports:
       - "18082:80"
   multiplysvc:
-    image: daed.duckdns.org:50000/multiservice_multiplysvc
+    image: daed.duckdns.org:50000/multiservice_multiplysvc:latest
     ports:
       - "18083:80"
   frontend:
-    image: daed.duckdns.org:50000/multiservice_frontend
+    image: daed.duckdns.org:50000/multiservice_frontend:latest
     ports:
       - "18080:80"
