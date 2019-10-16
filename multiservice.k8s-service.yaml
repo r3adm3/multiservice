@@ -2,8 +2,8 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: myservice
-  name: myservice
+    app: myservice-fe
+  name: myservice-fe
 spec:
   ports:
   - nodePort: 30500
@@ -11,5 +11,54 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: myservice
+    app: myservice-fe
   type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: myservice-as
+  name: myservice-as
+spec:
+  ports:
+  - nodePort: 30501
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: myservice-as
+  type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: myservice-mus
+  name: myservice-mus
+spec:
+  ports:
+  - nodePort: 30502
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: myservice-mus
+  type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: myservice-mis
+  name: myservice-mis
+spec:
+  ports:
+  - nodePort: 30500
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: myservice-mis
+  type: NodePort
+---
