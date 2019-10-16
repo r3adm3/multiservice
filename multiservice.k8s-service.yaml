@@ -34,16 +34,16 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: myservice-mus
-  name: myservice-mus
+    app: myservice-mxs
+  name: myservice-mxs
 spec:
   ports:
-  - nodePort: 30502
+  - nodePort: 30503
     port: 80
     protocol: TCP
     targetPort: 80
   selector:
-    app: myservice-mus
+    app: myservice-mxs
   type: NodePort
 ---
 apiVersion: v1
@@ -54,11 +54,10 @@ metadata:
   name: myservice-mis
 spec:
   ports:
-  - nodePort: 30500
+  - nodePort: 30502
     port: 80
     protocol: TCP
     targetPort: 80
   selector:
     app: myservice-mis
   type: NodePort
----
