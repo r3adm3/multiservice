@@ -22,10 +22,34 @@ Included in the project is a docker-compose.yml file which will create a docker 
 docker-compose build
 ```
 
-To run all containers that comprise this solution:
+To run all containers that comprise this solution using docker-compose:
 
 ```docker
 docker-compose up
 ```
 
+...and cleanup
+
+```docker
+docker-compose down
+```
+
 Test should be able to be run using a browser, and going to http://localhost:18080
+
+To run all containers that comprise this solution using minikube:
+
+```kubectl
+minikube start
+kubectl delete -f multiservice.k8s-deployment.yaml
+kubectl delete -f multiservice.k8s-service.yaml
+```
+
+...and cleanup
+
+```kubectl
+kubectl delete -f multiservice.k8s-service.yaml
+kubectl delete -f multiservice.k8s-deployment.yaml
+minikube stop
+```
+
+Test should be able to be run using a browser, and going to http://localhost:30500
