@@ -2,7 +2,7 @@
 
 This service is a demonstration of moving from a monolithic code base to a more microservices based architecture.
 
-This is paired up with the repo: http://github.com/r3adm3/monolithsvc
+This is paired up with the repo: <http://github.com/r3adm3/monolithsvc>
 
 ## Compiling in Development
 
