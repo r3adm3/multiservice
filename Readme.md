@@ -1,18 +1,20 @@
 # MultiService (docker service example)
+
 This service is a demonstration of moving from a monolithic code base to a more microservices based architecture.
 
 This is paired up with the repo: http://github.com/r3adm3/monolithsvc
 
 ## Compiling in Development
+
 Should work on Windows and Macs (possibly Linux, not tried it yet)
 Clone the repo.
 
 Dependencies:-
-Docker CE
-VirtualBox
-Minikube
-Dotnet SDK 2.2
-Dotnet SDK 3.0
+Docker CE  
+VirtualBox  
+Minikube  
+Dotnet SDK 2.2  
+Dotnet SDK 3.0  
 
 Any of the component microservices can be tested with a simple by cd'ing into its directory
 
@@ -20,8 +22,8 @@ Any of the component microservices can be tested with a simple by cd'ing into it
 dotnet run
 ```
 
-Test should be able to be run using a browser, and going to http://localhost:5000/api/addservice?a=1&b=2
-(replace add with add, minus or multiply). Front end service is hosted on http://localhost:5000 when run individually.
+Test should be able to be run using a browser, and going to <http://localhost:5000/api/addservice?a=1&b=2>
+(replace add with add, minus or multiply). Front end service is hosted on <http://localhost:5000> when run individually.
 
 ## Making a docker image
 
@@ -43,7 +45,7 @@ or (rather than build each container locally, use the docker library version of 
 docker-compose -f docker-compose-from-lib.yml up
 ```
 
-Test should be able to be run using a browser, and going to http://localhost:18080
+Test should be able to be run using a browser, and going to <http://localhost:18080>  
 ...and cleanup
 
 ```docker
@@ -58,7 +60,7 @@ kubectl create -f multiservice.k8s-deployment.yaml
 kubectl create -f multiservice.k8s-service.yaml
 ```
 
-Test should be able to be run using a browser, and going to http://192.168.99.100:30500
+Test should be able to be run using a browser, and going to <http://192.168.99.100:30500>  
 ...and cleanup
 
 ```kubectl
@@ -66,4 +68,3 @@ kubectl delete -f multiservice.k8s-service.yaml
 kubectl delete -f multiservice.k8s-deployment.yaml
 minikube stop
 ```
-
