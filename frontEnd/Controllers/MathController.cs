@@ -4,6 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.Extensions.Configuration; 
+using System.Net.Http;
+using System.Text;
 
 namespace frontEnd.Controllers
 {
@@ -11,12 +14,64 @@ namespace frontEnd.Controllers
     [ApiController]
     public class MathController : ControllerBase
     {
+
+        IConfiguration _configuration;
+       
+        public MathController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        } 
+
         // GET api/values
         [HttpGet]
-        public void Get()
+        public string Get()
         {
-
+            GetData();                     
+            return "GET";
         }
+
+        [HttpPost]
+        public string Post()
+        {
+ 
+            return "POST";
+        }
+
+        static async void GetData()
+        {
+            
+            //location of our webhook
+            string Url = "http://localhost:5000/Home/About";
+
+            //some content to send into the webhook
+            StringContent stringContent = new StringContent(
+                "{ \"WEBHOOKDATA\": \"John\" }",
+                UnicodeEncoding.UTF8,
+                "application/json");
+
+
+            //Create a new instance of HttpClient
+            using (HttpClient client = new HttpClient())
+            {
+                
+                //Setting up the response...         
+                using (HttpResponseMessage res = await client.GetAsync(Url))
+                {        
+                    using (HttpContent content = res.Content)
+                    {
+                        string data = await content.ReadAsStringAsync();
+                        if (data != null)
+                        {
+                            Console.WriteLine(data);
+                        }
+                    }
+            
+                }
+            }
+
+
+
+        }        
 
     }
 }
