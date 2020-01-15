@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+
 namespace frontEnd
 {
     public class Startup
@@ -44,6 +45,9 @@ namespace frontEnd
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                Console.WriteLine("ENV : " + env.EnvironmentName);
+                Console.WriteLine("KUBEENV : " + Environment.GetEnvironmentVariable("KUBEENV"));
+                Console.WriteLine("web1 : " + Configuration.GetSection("Logging").GetSection("addServiceLink").Value);
             }
             else
             {

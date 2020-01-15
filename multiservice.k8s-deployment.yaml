@@ -14,6 +14,7 @@ spec:
       labels:
         app: myservice-fe
     spec:
+      hostname: multiservice-fe1
       containers:
       - image: daed.duckdns.org:50000/multiservice_frontend
         name: multiservice-fe
@@ -39,11 +40,12 @@ spec:
       labels:
         app: myservice-as
     spec:
+      hostname: multiservice-as1
       containers:
       - image: daed.duckdns.org:50000/multiservice_addsvc
         name: multiservice-as
         ports:
-        - containerPort: 80
+        - containerPort: 81
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -61,11 +63,12 @@ spec:
       labels:
         app: myservice-mxs
     spec:
+      hostname: multiservice-mxs1
       containers:
       - image: daed.duckdns.org:50000/multiservice_multiplysvc
         name: multiservice-mxs
         ports:
-        - containerPort: 80
+        - containerPort: 82
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -83,8 +86,9 @@ spec:
       labels:
         app: myservice-mis
     spec:
+      hostname: multiservice-mis1
       containers:
       - image: daed.duckdns.org:50000/multiservice_minussvc
         name: multiservice-mis
         ports:
-        - containerPort: 80
+        - containerPort: 83

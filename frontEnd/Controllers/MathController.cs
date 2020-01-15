@@ -24,20 +24,13 @@ namespace frontEnd.Controllers
 
         // GET api/values
         [HttpGet]
-        public string Get()
+        public string Get(string op, int a, int b)
         {
-            GetData();                     
-            return "GET";
+            string result = GetData().ToString();                     
+            return result;
         }
 
-        [HttpPost]
-        public string Post()
-        {
- 
-            return "POST";
-        }
-
-        static async void GetData()
+        static async Task<string> GetData()
         {
             
             //location of our webhook
@@ -49,6 +42,7 @@ namespace frontEnd.Controllers
                 UnicodeEncoding.UTF8,
                 "application/json");
 
+            string data;
 
             //Create a new instance of HttpClient
             using (HttpClient client = new HttpClient())
@@ -59,7 +53,7 @@ namespace frontEnd.Controllers
                 {        
                     using (HttpContent content = res.Content)
                     {
-                        string data = await content.ReadAsStringAsync();
+                        data = await content.ReadAsStringAsync();
                         if (data != null)
                         {
                             Console.WriteLine(data);
@@ -68,6 +62,8 @@ namespace frontEnd.Controllers
             
                 }
             }
+
+            return data;
 
 
 
