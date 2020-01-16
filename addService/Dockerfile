@@ -13,6 +13,8 @@
 
  # Stage 2
  FROM mcr.microsoft.com/dotnet/core/aspnet:3.0
+ RUN apt-get update
+ RUN apt-get install iputils-ping curl iproute2 -y
  WORKDIR /app
  COPY --from=builder /app .
  ENTRYPOINT ["dotnet", "addService.dll"]

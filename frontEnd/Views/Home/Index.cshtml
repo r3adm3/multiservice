@@ -17,26 +17,27 @@
 <br /><br />
 <div id="result"></div>
 <br /><br />
-<p>@ViewBag.myData</p>
+<p>::@ViewBag.myData::</p>
 
 <script>
     function operationFunction(op) {
 
         var aNumber = document.getElementById("a").value
         var bNumber = document.getElementById("b").value
+        var kubeConfig = '@(ViewBag.kubeEnv)'
 
         if(op==='add'){var svcLink='@(ViewBag.addServiceLink)'}
         if(op==='minus'){var svcLink='@(ViewBag.minusServiceLink)'}
         if(op==='multiply'){var svcLink='@(ViewBag.multiplyServiceLink)'}
  
         var req = new XMLHttpRequest();
-        req.open('GET', svcLink + 'a=' + aNumber + '&b=' +bNumber , true);
+        req.open('GET', svcLink + '&a=' + aNumber + '&b=' +bNumber , true);
 
         req.onload = function () {
             if (req.status >= 200 && req.status < 400) {
-                console.log ('result ' + req.responseText);
+                console.log ('result ' + req.responseText );
                 var result = req.responseText;
-                document.getElementById("result").innerHTML = "Result " + result;
+                document.getElementById("result").innerHTML = "Result " + result ;
             } else {
                 alert('Oh dear!');
             }

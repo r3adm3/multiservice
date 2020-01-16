@@ -12,7 +12,6 @@ namespace frontEnd.Controllers
     public class HomeController : Controller
     {
         IConfiguration _configuration;
-       
 
         public HomeController(IConfiguration configuration)
         {
@@ -21,10 +20,19 @@ namespace frontEnd.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.myData = _configuration["myFirstValue"];
-            ViewBag.addServiceLink = _configuration["addServiceLink"];
-            ViewBag.minusServiceLink = _configuration["minusServiceLink"];
-            ViewBag.multiplyServiceLink = _configuration["multiplyServiceLink"];
+            //Console.WriteLine(" ** " + _configuration["Logging:addServiceLink"]);
+            ViewBag.kubeEnv = Environment.GetEnvironmentVariable("KUBEENV");
+            ViewBag.myData = _configuration["Logging:myFirstValue"];
+            if (ViewBag.kubeEnv == true){
+                ViewBag.addServiceLink = "http://localhost/api/Math&op=add";
+                ViewBag.minusServiceLink = "http://localhost/api/Math&op=minus";
+                ViewBag.multiplyServiceLink = "http://localhost/api/Math&op=multiply";
+               
+            } else {
+                ViewBag.addServiceLink = _configuration["Logging:addServiceLink"];
+                ViewBag.minusServiceLink = _configuration["Logging:minusServiceLink"];
+                ViewBag.multiplyServiceLink = _configuration["Logging:multiplyServiceLink"];
+            }
             return View();
         }
 
