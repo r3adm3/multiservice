@@ -1,20 +1,34 @@
----
 apiVersion: v1
 kind: Pod
-metadata:
-    name: multiservice-singlepod
+metadata: 
+  name: four-containers-single-pod
+
 spec:
-    containers:
-        - name: frontend
-          image: daed.duckdns.org:50000/multiservice_frontend:latest
-          env: 
-            - name: KUBEENV
-              value: "true"
-            - name: ASPNETCORE_ENVIRONMENT
-              value: "Development "
-        - name: addsvc
-          image: daed.duckdns.org:50000/multiservice_addsvc:latest
-        - name: minussvc
-          image: daed.duckdns.org:50000/multiservice_minussvc:latest
-        - name: multiplysvc
-          image: daed.duckdns.org:50000/multiservice_multiplysvc:latest
+  containers:
+    - name: frontend
+      image: daed.duckdns.org:50000/multiservice_frontend:latest
+      env: 
+        - name: KUBEENV
+          value: "true"
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"
+
+    - name: addservice
+      image: daed.duckdns.org:50000/multiservice_addsvc:latest
+      env:
+        - name: ASPNETCORE_URLS
+          value: "http://::81"
+
+    - name: minusservice
+      image: daed.duckdns.org:50000/multiservice_minussvc:latest
+      env:
+        - name: ASPNETCORE_URLS
+          value: "http://::82"
+
+    - name: multiplyservice
+      image: daed.duckdns.org:50000/multiservice_multiplysvc:latest
+      env:
+        - name: ASPNETCORE_URLS
+          value: "http://::83"
+
+

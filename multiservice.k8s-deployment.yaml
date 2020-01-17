@@ -20,9 +20,11 @@ spec:
         name: multiservice-fe
         ports:
         - containerPort: 80
-        env:
-        - name: ASPNETCORE_ENVIRONMENT
-          value: Staging
+        env: 
+          - name: KUBEENV
+            value: "true"
+          - name: ASPNETCORE_ENVIRONMENT
+            value: "Development"
 ---
 apiVersion: apps/v1
 kind: Deployment
