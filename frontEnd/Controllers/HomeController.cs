@@ -23,7 +23,7 @@ namespace frontEnd.Controllers
             //Console.WriteLine(" ** " + _configuration["Logging:addServiceLink"]);
             ViewBag.kubeEnv = Environment.GetEnvironmentVariable("KUBEENV");
             ViewBag.myData = _configuration["Logging:myFirstValue"];
-            if (ViewBag.kubeEnv == true){
+            if (ViewBag.kubeEnv == "true"){
                 ViewBag.addServiceLink = "http://localhost/api/Math&op=add";
                 ViewBag.minusServiceLink = "http://localhost/api/Math&op=minus";
                 ViewBag.multiplyServiceLink = "http://localhost/api/Math&op=multiply";

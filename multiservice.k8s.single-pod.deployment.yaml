@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+    name: multiservice-singlepod
+spec:
+    containers:
+        - name: frontend
+          image: daed.duckdns.org:50000/multiservice_frontend:latest
+          env: 
+            - name: KUBEENV
+              value: "true"
+            - name: ASPNETCORE_ENVIRONMENT
+              value: "Development "
+        - name: addsvc
+          image: daed.duckdns.org:50000/multiservice_addsvc:latest
+        - name: minussvc
+          image: daed.duckdns.org:50000/multiservice_minussvc:latest
+        - name: multiplysvc
+          image: daed.duckdns.org:50000/multiservice_multiplysvc:latest
