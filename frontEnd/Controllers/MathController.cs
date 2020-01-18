@@ -26,7 +26,7 @@ namespace frontEnd.Controllers
         [HttpGet]
         public string Get(string op, int a, int b)
         {
-            string result = GetData().ToString();                     
+            string result = op + " " + a + " " + b;                     
             return result;
         }
 

@@ -16,7 +16,7 @@ spec:
     spec:
       hostname: multiservice-fe1
       containers:
-      - image: daed.duckdns.org:50000/multiservice_frontend
+      - image: daed.duckdns.org:50000/multiservice_frontend:latest
         name: multiservice-fe
         ports:
         - containerPort: 80
@@ -24,7 +24,7 @@ spec:
           - name: KUBEENV
             value: "true"
           - name: ASPNETCORE_ENVIRONMENT
-            value: "Development"
+            value: "Staging"
 ---
 apiVersion: apps/v1
 kind: Deployment
