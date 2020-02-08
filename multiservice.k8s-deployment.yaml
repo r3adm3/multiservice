@@ -33,7 +33,7 @@ metadata:
   labels:
     app: myservice-as
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: myservice-as
@@ -44,7 +44,7 @@ spec:
     spec:
       hostname: multiservice-as1
       containers:
-      - image: daed.duckdns.org:50000/multiservice_addsvc
+      - image: daed.duckdns.org:50000/multiservice_addsvc:latest
         name: multiservice-as
         ports:
         - containerPort: 81
@@ -56,7 +56,7 @@ metadata:
   labels:
     app: myservice-mxs
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: myservice-mxs
@@ -67,7 +67,7 @@ spec:
     spec:
       hostname: multiservice-mxs1
       containers:
-      - image: daed.duckdns.org:50000/multiservice_multiplysvc
+      - image: daed.duckdns.org:50000/multiservice_multiplysvc:latest
         name: multiservice-mxs
         ports:
         - containerPort: 82
@@ -79,7 +79,7 @@ metadata:
   labels:
     app: myservice-mis
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: myservice-mis
@@ -90,7 +90,23 @@ spec:
     spec:
       hostname: multiservice-mis1
       containers:
-      - image: daed.duckdns.org:50000/multiservice_minussvc
+      - image: daed.duckdns.org:50000/multiservice_minussvc:latest
         name: multiservice-mis
         ports:
         - containerPort: 83
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: myservice-fe
+  name: myservice-fe
+spec:
+  ports:
+  - nodePort: 30500
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: myservice-fe
+  type: NodePort
