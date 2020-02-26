@@ -5,7 +5,7 @@ metadata:
   labels:
     app: myservice-fe
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: myservice-fe
@@ -14,7 +14,6 @@ spec:
       labels:
         app: myservice-fe
     spec:
-      hostname: multiservice-fe1
       containers:
       - image: daed.duckdns.org:50000/multiservice_frontend:latest
         name: multiservice-fe
@@ -33,7 +32,7 @@ metadata:
   labels:
     app: myservice-as
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: myservice-as
@@ -42,7 +41,6 @@ spec:
       labels:
         app: myservice-as
     spec:
-      hostname: multiservice-as1
       containers:
       - image: daed.duckdns.org:50000/multiservice_addsvc:latest
         name: multiservice-as
@@ -56,7 +54,7 @@ metadata:
   labels:
     app: myservice-mxs
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: myservice-mxs
@@ -65,7 +63,6 @@ spec:
       labels:
         app: myservice-mxs
     spec:
-      hostname: multiservice-mxs1
       containers:
       - image: daed.duckdns.org:50000/multiservice_multiplysvc:latest
         name: multiservice-mxs
@@ -79,7 +76,7 @@ metadata:
   labels:
     app: myservice-mis
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: myservice-mis
@@ -88,7 +85,6 @@ spec:
       labels:
         app: myservice-mis
     spec:
-      hostname: multiservice-mis1
       containers:
       - image: daed.duckdns.org:50000/multiservice_minussvc:latest
         name: multiservice-mis

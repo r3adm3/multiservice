@@ -14,7 +14,7 @@
  # Stage 2
  FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
  RUN apt-get update
- RUN apt-get install iputils-ping curl iproute2 dnsutils -y
+ RUN apt-get install iputils-ping curl iproute2 dnsutils lsof net-tools -y
  WORKDIR /app
  COPY --from=builder /app .
  ENTRYPOINT ["dotnet", "multiplyService.dll"]

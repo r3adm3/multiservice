@@ -57,14 +57,12 @@ To run all containers that comprise this solution using minikube:
 ```kubectl
 minikube start
 kubectl create -f multiservice.k8s-deployment.yaml
-kubectl create -f multiservice.k8s-service.yaml
 ```
 
 Test should be able to be run using a browser, and going to <http://192.168.99.100:30500>  
 ...and cleanup
 
 ```kubectl
-kubectl delete -f multiservice.k8s-service.yaml
 kubectl delete -f multiservice.k8s-deployment.yaml
 minikube stop
 ```
