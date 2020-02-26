@@ -33,7 +33,7 @@ metadata:
   labels:
     app: myservice-as
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: myservice-as
@@ -56,7 +56,7 @@ metadata:
   labels:
     app: myservice-mxs
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: myservice-mxs
@@ -79,7 +79,7 @@ metadata:
   labels:
     app: myservice-mis
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: myservice-mis
@@ -110,3 +110,45 @@ spec:
   selector:
     app: myservice-fe
   type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: myservice-as
+  name: myservice-as
+spec:
+    ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+    selector: 
+      app: myservice-as
+---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: myservice-mxs
+    name: myservice-mxs
+  spec:
+      ports:
+      - port: 80
+        protocol: TCP
+        targetPort: 80
+      selector: 
+        app: myservice-mxs
+---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: myservice-mis
+    name: myservice-mis
+  spec:
+      ports:
+      - port: 80
+        protocol: TCP
+        targetPort: 80
+      selector: 
+        app: myservice-mis
