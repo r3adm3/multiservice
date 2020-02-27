@@ -24,9 +24,9 @@ namespace frontEnd.Controllers
             ViewBag.kubeEnv = Environment.GetEnvironmentVariable("KUBEENV");
             ViewBag.myData = _configuration["Logging:myFirstValue"];
             if (ViewBag.kubeEnv == "true"){
-                ViewBag.addServiceLink = "http://myservice-as.default.svc.cluster.local/api/Math&op=add";
-                ViewBag.minusServiceLink = "http://myservice-mis.default.svc.cluster.local/api/Math&op=minus";
-                ViewBag.multiplyServiceLink = "http://myservice-mxs.default.svc.cluster.local/api/Math&op=multiply";
+                ViewBag.addServiceLink = "http://192.168.99.100:30500/api/Math?op=add";
+                ViewBag.minusServiceLink = "http://192.168.99.100:30500/api/Math?op=minus";
+                ViewBag.multiplyServiceLink = "http://192.168.99.100:30500/api/Math?op=multiply";
                
             } else {
                 ViewBag.addServiceLink = _configuration["Logging:addServiceLink"];

@@ -1,0 +1,18 @@
+apiVersion: skaffold/v2alpha4
+kind: Config
+metadata:
+  name: multiservice
+build:
+  artifacts:
+  - image: daed.duckdns.org:50000/multiservice_addsvc
+    context: addService
+  - image: daed.duckdns.org:50000/multiservice_frontend
+    context: frontEnd
+  - image: daed.duckdns.org:50000/multiservice_minussvc
+    context: minusService
+  - image: daed.duckdns.org:50000/multiservice_multiplysvc
+    context: multiplyService
+deploy:
+  kubectl:
+    manifests:
+    - multiservice.k8s-deployment.yaml

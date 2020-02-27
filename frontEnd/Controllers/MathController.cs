@@ -24,7 +24,7 @@ namespace frontEnd.Controllers
 
         // GET api/values
         [HttpGet]
-        public string Get(string op, int a, int b)
+        public string Get(string op, string a, string b)
         {
             string result = op + " " + a.ToString() + " " + b.ToString();                     
             return result;

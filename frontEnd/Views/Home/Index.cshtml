@@ -26,9 +26,9 @@
         var bNumber = document.getElementById("b").value
         var kubeConfig = '@(ViewBag.kubeEnv)'
 
-        if(op==='add'){var svcLink='@(ViewBag.addServiceLink)'}
-        if(op==='minus'){var svcLink='@(ViewBag.minusServiceLink)'}
-        if(op==='multiply'){var svcLink='@(ViewBag.multiplyServiceLink)'}
+        if(op==='add'){var svcLink='@Html.Raw(ViewBag.addServiceLink)'}
+        if(op==='minus'){var svcLink='@Html.Raw(ViewBag.minusServiceLink)'}
+        if(op==='multiply'){var svcLink='@Html.Raw(ViewBag.multiplyServiceLink)'}
  
         var req = new XMLHttpRequest();
         req.open('GET', svcLink + '&a=' + aNumber + '&b=' +bNumber , true);
