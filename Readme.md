@@ -59,6 +59,12 @@ minikube start
 kubectl create -f multiservice.k8s-deployment.yaml
 ```
 
+or as part of the Cheddar release you can now test using Skaffold
+
+```kubectl
+skaffold dev
+```
+
 Test should be able to be run using a browser, and going to <http://192.168.99.100:30500>  
 ...and cleanup
 

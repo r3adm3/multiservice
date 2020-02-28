@@ -3,8 +3,6 @@ version: '3'
 services:
   addsvc:
     image: daed.duckdns.org:50000/multiservice_addsvc:latest
-    deploy: 
-      replicas: 2
     ports:
       - "18081:80"
   minussvc:

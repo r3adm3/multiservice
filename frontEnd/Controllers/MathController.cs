@@ -26,21 +26,32 @@ namespace frontEnd.Controllers
         [HttpGet]
         public string Get(string op, string a, string b)
         {
-            string result = op + " " + a.ToString() + " " + b.ToString();                     
-            return result;
+            string resultFromGetData = GetData(op, a.ToString(), b.ToString()).Result;                    
+            return resultFromGetData;
         }
 
-        static async Task<string> GetData()
+        static async Task<string> GetData(string op, string a, string b)
         {
-            
-            //location of our webhook
-            string Url = "http://localhost:5000/Home/About";
+            string kubePod= "";
 
-            //some content to send into the webhook
-            StringContent stringContent = new StringContent(
-                "{ \"WEBHOOKDATA\": \"John\" }",
-                UnicodeEncoding.UTF8,
-                "application/json");
+            switch (op)
+            {
+                case "add":
+                    kubePod = "myservice-as";
+                    break;
+                case "minus":
+                    kubePod = "myservice-mis";
+                    break;
+                case "multiply":
+                    kubePod = "myservice-mxs";
+                    break;
+                default:
+                    break;
+
+
+            }
+            //location of our webhook
+            string Url = "http://" + kubePod + "/api/" + op + "?a=" + a + "&b=" + b;
 
             string data;
 
