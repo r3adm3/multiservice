@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        sh 'echo Test Script'
+        sh '''echo Test Script
+pwd
+ls -R'''
       }
     }
 
