@@ -72,5 +72,3 @@ Test should be able to be run using a browser, and going to <http://192.168.99.1
 kubectl delete -f multiservice.k8s-deployment.yaml
 minikube stop
 ```
-
-Test Edit. Ignore. 
