@@ -36,7 +36,7 @@ In the addService folder
 docker image build -t addsvc:edam_dev .
 ```
 
-## How do I run a test?
+## How do I run a test
 
 Make sure you are in the addService.Tests project folder and run the following:
 

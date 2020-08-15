@@ -32,7 +32,7 @@ namespace multiplyService.Tests
         }
 
         [TestMethod]
-        public void sharedMathdotnetverThreeOneZero()
+        public void sharedMathdotnetverThreeOneSix()
         {
             var sharedMath = new sharedMath();
 
