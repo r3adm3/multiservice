@@ -38,7 +38,7 @@ namespace multiplyService.Tests
 
             var result = sharedMath.dotnetver;
 
-            Assert.AreEqual(".NET Core   3.1.7",result);
+            Assert.AreEqual(".NET Core   3.1.6",result);
         }
 
         [TestMethod]
