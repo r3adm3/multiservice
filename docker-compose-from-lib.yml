@@ -5,15 +5,23 @@ services:
     image: daed.duckdns.org:50000/multiservice_addsvc:latest
     ports:
       - "18081:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development     
   minussvc:
     image: daed.duckdns.org:50000/multiservice_minussvc:latest
     ports:
       - "18082:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
   multiplysvc:
     image: daed.duckdns.org:50000/multiservice_multiplysvc:latest
     ports:
       - "18083:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
   frontend:
     image: daed.duckdns.org:50000/multiservice_frontend:latest
     ports:
       - "18080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development

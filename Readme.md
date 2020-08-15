@@ -13,39 +13,24 @@ Dependencies:-
 Docker CE  
 VirtualBox  
 Minikube  
-Dotnet SDK 2.2  
-Dotnet SDK 3.0  
+Dotnet SDK 3.1
 
-Any of the component microservices can be tested with a simple by cd'ing into its directory
-
-```dotnetcore
-dotnet run
-```
-
-Test should be able to be run using a browser, and going to <http://localhost:5000/api/addservice?a=1&b=2>
-(replace add with add, minus or multiply). Front end service is hosted on <http://localhost:5000> when run individually.
-
-## Making a docker image
-
-Included in the project is a docker-compose.yml file which will create a docker image artifacts of each of the subcomponent webapi services, change into the source code directory and type:
-
-```docker
-docker-compose build
-```
+Any of the component microservices can be tested and run individually with a simple by cd'ing into its directory. Check the Readme.md for details on runtime, compile and docker build instructions
 
 To build and run all containers that comprise this solution using docker-compose:
 
 ```docker
-docker-compose up
+docker-compose up --build
 ```
 
-or (rather than build each container locally, use the docker library version of each container)
+or (rather than build each container locally, use the docker container version of each container)
 
 ```docker
 docker-compose -f docker-compose-from-lib.yml up
 ```
 
 Test should be able to be run using a browser, and going to <http://localhost:18080>  
+
 ...and cleanup
 
 ```docker
