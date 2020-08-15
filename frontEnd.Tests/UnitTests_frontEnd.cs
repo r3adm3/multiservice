@@ -23,5 +23,15 @@ namespace frontEnd.Tests
 
         }
 
+        [TestMethod]
+        public void MathControllerCanInstantiate()
+        {
+            var controller = new MathController(_configuration);
+
+            Assert.IsNotNull(controller);
+
+        }
+
+
     }
 }
