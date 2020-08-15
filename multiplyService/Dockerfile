@@ -9,6 +9,7 @@
 
  # copies the rest of your code
  COPY . .
+ RUN find -type d -name bin -prune -exec rm -rf {} \; && find -type d -name obj -prune -exec rm -rf {} \;
  RUN dotnet publish --output /app/ --configuration Release
 
  # Stage 2
