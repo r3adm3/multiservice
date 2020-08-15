@@ -1,4 +1,4 @@
-# minusService
+# multiplyService
 
 This service adds two numbers together and forms part of a multiservice example that can be run in docker compose or kubernetes.
 
@@ -10,7 +10,7 @@ Current version of dotnet core this has been tested with is .NET Core 3.1.0 on W
 
 ## Compile it
 
-In the minusService folder
+In the multiplyService folder
 
 ```dotnetcore
 dotnet build
@@ -18,27 +18,27 @@ dotnet build
 
 ## Test it
 
-In the minusService folder
+In the multiplyService folder
 
 ```dotnetcore
 dotnet run
 ```
 
-Go to URL <http://localhost:5000/api/minus?a=1&b=2>
+Go to URL <http://localhost:5000/api/multiply?a=1&b=2>
 
 Change "a" and "b" to whatever you want. Result that comes back is JSON, including the hostname of the server it runs on, the .NET version is running and the addition result
 
 ## Docker Image
 
-In the minusService folder
+In the multiplyService folder
 
 ```docker
-docker image build -t minussvc:edam_dev .
+docker image build -t multiplysvc:edam_dev .
 ```
 
 ## How do I run a test
 
-Make sure you are in the minusService.Tests project folder and run the following:
+Make sure you are in the multiplyService.Tests project folder and run the following:
 
 ```dotnetcore
 dotnet test
