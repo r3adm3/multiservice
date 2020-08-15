@@ -4,18 +4,18 @@ using System.Threading.Tasks;
 using multiservice.Models;
 using Microsoft.Extensions.Configuration; 
 
-namespace addService.Tests
+namespace minusService.Tests
 {
     [TestClass]
     public class unitTests_sharedMath
     {
         [TestMethod]
-        public void sharedMathAddTwoNumbers()
+        public void sharedMathMinusTwoNumbers()
         {
 
             var sharedMath = new sharedMath();
 
-            var result = sharedMath.addTwoNumbers(1,2);
+            var result = sharedMath.minusTwoNumbers(5,2);
 
             Assert.AreEqual(3, result);
 

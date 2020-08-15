@@ -4,20 +4,20 @@ using System.Threading.Tasks;
 using multiservice.Models;
 using Microsoft.Extensions.Configuration; 
 
-namespace addService.Tests
+namespace multiplyService.Tests
 {
     [TestClass]
     public class unitTests_sharedMath
     {
         [TestMethod]
-        public void sharedMathAddTwoNumbers()
+        public void sharedMathMultiplyTwoNumbers()
         {
 
             var sharedMath = new sharedMath();
 
-            var result = sharedMath.addTwoNumbers(1,2);
+            var result = sharedMath.multiplyTwoNumbers(1,2);
 
-            Assert.AreEqual(3, result);
+            Assert.AreEqual(2, result);
 
         }
 
@@ -38,7 +38,7 @@ namespace addService.Tests
 
             var result = sharedMath.dotnetver;
 
-            Assert.AreEqual(".NET Core   3.1.0", result);
+            Assert.AreEqual(".NET Core   3.1.0");
         }
 
         [TestMethod]
