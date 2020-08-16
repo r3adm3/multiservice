@@ -9,6 +9,14 @@
     {
       "library": "twitter-bootstrap@4.5.2",
       "destination": "wwwroot/lib/bootstrap/dist"
+    },
+    {
+      "library": "jquery-validate@1.19.2",
+      "destination": "wwwroot/lib/jquery-validation/dist"
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.11",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive"
     }
   ]
 }
