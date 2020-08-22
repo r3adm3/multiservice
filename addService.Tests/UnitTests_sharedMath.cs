@@ -32,13 +32,13 @@ namespace addService.Tests
         }
 
         [TestMethod]
-        public void sharedMathdotnetverThreeOneSix()
+        public void sharedMathdotnetverThreeOneSeven()
         {
             var sharedMath = new sharedMath();
 
             var result = sharedMath.dotnetver;
 
-            Assert.AreEqual(".NET Core   3.1.6", result);
+            Assert.AreEqual(".NET Core   3.1.7", result);
         }
 
         [TestMethod]
