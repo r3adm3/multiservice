@@ -10,24 +10,15 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
-- task: SonarCloudPrepare@1
+- task: DotNetCoreCLI@2
   inputs:
-    SonarCloud: 'mono-multi sonar'
-    organization: 'r3adm3'
-    scannerMode: 'MSBuild'
-    projectKey: 'r3adm3_multiservice'
-    projectName: 'multiservice'
+    command: 'restore'
+    feedsToUse: 'select'
 
-- task: SonarCloudAnalyze@1
-
-- task: SonarCloudPublish@1
+- task: DotNetCoreCLI@2
   inputs:
-    pollingTimeoutSec: '300'
+    command: 'test'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
