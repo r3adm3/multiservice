@@ -15,9 +15,7 @@ steps:
     command: 'restore'
     feedsToUse: 'select'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'test'
+
 
 - task: DotNetCoreCLI@2
   inputs:
