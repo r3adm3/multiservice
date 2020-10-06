@@ -9,5 +9,11 @@ ls -R'''
       }
     }
 
+    stage('multiservice test') {
+      steps {
+        sh 'dotnet test addService.Tests/'
+      }
+    }
+
   }
 }
