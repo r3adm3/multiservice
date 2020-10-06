@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Test') {
+    stage('Env Checks') {
       steps {
         sh '''echo Test Script
 pwd
