@@ -38,7 +38,7 @@ namespace addService.Tests
 
             var result = sharedMath.dotnetver;
 
-            Assert.AreEqual(".NET Core   3.1.10", result);
+            Assert.AreEqual(".NET Core   3.1.11", result);
         }
 
         [TestMethod]
