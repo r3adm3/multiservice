@@ -16,13 +16,14 @@ ls -R'''
       }
     }
 
-    stage('multiservice publish')
+    stage('multiservice publish'){
       steps{
         sh '''
 cd frontend
 dotnet publish
         '''
       }
+    }
 
   }
 }
