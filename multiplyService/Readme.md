@@ -6,7 +6,7 @@ Parent repo: <http://github.com/r3adm3/multiservice>
 
 ## Dependencies
 
-Current version of dotnet core this has been tested with is .NET Core 3.1.0 on Windows/Mac
+Current version of dotnet core this has been tested with is .NET 5.0 on Windows/Mac
 
 ## Compile it
 

@@ -22,5 +22,41 @@ pipeline {
         }
     }
 
+    stage('minusService test') {
+      steps {
+        sh 'dotnet test minusService.Tests/'
+      }
+    }
+
+    stage('minusService publish'){
+      steps{
+        sh 'dotnet publish minusService/'
+        }
+    }
+
+     stage('multiplyService test') {
+      steps {
+        sh 'dotnet test multiplyService.Tests/'
+      }
+    }
+
+    stage('multiplyService publish'){
+      steps{
+        sh 'dotnet publish multipyService/'
+        }
+    }
+
+     stage('frontEnd test') {
+      steps {
+        sh 'dotnet test frontEnd.Tests/'
+      }
+    }
+
+    stage('frontEnd publish'){
+      steps{
+        sh 'dotnet publish frontEnd/'
+        }
+    }      
+
   }
 }
