@@ -19,8 +19,7 @@ ls -R'''
     stage('multiservice publish'){
       steps{
         sh '''
-cd frontend
-dotnet publish
+dotnet publish addService/
         '''
       }
     }

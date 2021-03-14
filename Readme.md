@@ -13,7 +13,7 @@ Dependencies:-
 Docker CE  
 VirtualBox  
 Minikube  
-Dotnet SDK 3.1
+Dotnet SDK 3.1 and 5.0
 
 Any of the component microservices can be tested and run individually with a simple by cd'ing into its directory. Check the Readme.md for details on runtime, compile and docker build instructions
 
@@ -57,3 +57,8 @@ Test should be able to be run using a browser, and going to <http://192.168.99.1
 kubectl delete -f multiservice.k8s-deployment.yaml
 minikube stop
 ```
+
+| environment | env | tested | Date
+| ----------- | ----------- | ----------- | ----------- |
+| kubectl apply -f multiservice.k8s-deployment.yaml | docker desktop / k8s | success | 2021-03-14
+| docker-compose -f docker-compose-from-lib.yml | docker desktop / k8s | success | 2021-03-14
