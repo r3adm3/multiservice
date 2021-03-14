@@ -58,8 +58,23 @@ kubectl delete -f multiservice.k8s-deployment.yaml
 minikube stop
 ```
 
-| environment | env | tested | Date
-| ----------- | ----------- | ----------- | ----------- |
-| kubectl apply -f multiservice.k8s-deployment.yaml | docker desktop / k8s | success | 2021-03-14
-| docker-compose -f docker-compose-from-lib.yml | docker desktop / k8s | success | 2021-03-14
-| docker-compose -f docker-compose.yml | docker desktop | success | 2021-03-14
+| service | CI tested | Docker Reg Upload | 
+| ----------- | ----------- | ----------- |
+| frontend |[![Build status](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_apis/build/status/multiservice/frontend/compile%20%26%20test%20(frontend%20only))](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_build/latest?definitionId=22)| [![Build status](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_apis/build/status/multiservice/frontend/docker%20build%20(frontEnd%20only))](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_build/latest?definitionId=19) | [![Build status](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_apis/build/status/multiservice/frontend/docker%20build%20(frontEnd%20only))](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_build/latest?definitionId=19)
+| addservice |[![Build status](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_apis/build/status/multiservice/addservice/compile%20%26%20test%20(add%20only))](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_build/latest?definitionId=15)| [![Build status](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_apis/build/status/multiservice/addservice/docker%20build%20(add%20only))](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_build/latest?definitionId=16)
+| minusservice |[![Build status](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_apis/build/status/multiservice/minusservice/compile%20%26%20test%20(minus%20only))](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_build/latest?definitionId=20)| [![Build status](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_apis/build/status/multiservice/minusservice/docker%20build%20(minus%20only))](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_build/latest?definitionId=17)
+| multiplyservice |[![Build status](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_apis/build/status/multiservice/multiplyservice/compile%20%26%20test%20(multiply%20only))](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_build/latest?definitionId=21) | [![Build status](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_apis/build/status/multiservice/multiplyservice/docker%20build%20(multiply%20only))](https://techfrontier.visualstudio.com/dockerOrchestrationExperiment/_build/latest?definitionId=18)
+
+| release | environment | env | tested | Date
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| Fontal-Beta | docker-compose -f docker-compose-from-lib.yml | docker desktop - mac | not complete | 
+| Fontal-Beta | docker-compose -f docker-compose.yml | docker desktop - mac | not complete | 
+| Fontal-Beta | docker-compose -f docker-compose-from-lib.yml | docker toolbox - win | not complete | 
+| Fontal-Beta | docker-compose -f docker-compose.yml | docker toolbox - win | not complete | 
+| Fontal-Beta | kubectl apply -f multiservice.k8s-deployment.yaml | docker desktop / k8s - mac | not complete | 
+| Fontal-Beta | kubectl apply -f multiservice.k8s-deployment.yaml | minikube - mac | not complete |
+| Fontal-Beta | kubectl apply -f multiservice.k8s-deployment.yaml | kmaster - mac | not complete |
+| Fontal-Beta | kubectl apply -f multiservice.k8s-deployment.yaml | virtualbox / minikube - win | not complete |
+| Fontal-Beta | kubectl apply -f multiservice.k8s-deployment.yaml | virtualbox / kmaster - win | not complete |
+| Fontal-Beta | kubectl apply -f multiservice.k8s-deployment.yaml | k8s - AKS | not complete |
+| Fontal-Beta | kubectl apply -f multiservice.k8s-deployment.yaml | k8s - GKE | not complete |
