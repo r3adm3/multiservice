@@ -42,7 +42,7 @@ pipeline {
 
     stage('multiplyService publish'){
       steps{
-        sh 'dotnet publish multipyService/'
+        sh 'dotnet publish multiplyService/'
         }
     }
 
