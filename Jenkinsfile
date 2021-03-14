@@ -4,24 +4,22 @@ pipeline {
     stage('Env Checks') {
       steps {
         sh '''
-echo Test Script
-pwd
-ls -R'''
+          echo Test Script
+          pwd
+          ls -R'''
       }
     }
 
-    stage('multiservice test') {
+    stage('addService test') {
       steps {
         sh 'dotnet test addService.Tests/'
       }
     }
 
-    stage('multiservice publish'){
+    stage('addService publish'){
       steps{
-        sh '''
-dotnet publish addService/
-        '''
-      }
+        sh 'dotnet publish addService/'
+        }
     }
 
   }
