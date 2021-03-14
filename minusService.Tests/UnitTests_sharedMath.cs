@@ -32,13 +32,16 @@ namespace minusService.Tests
         }
 
         [TestMethod]
-        public void sharedMathdotnetverThreeOneSeven()
+        public void sharedMathdotnetverFiveZero()
         {
             var sharedMath = new sharedMath();
 
             var result = sharedMath.dotnetver;
 
-            Assert.AreEqual(".NET Core   3.1.12", result);
+            // only grab the semver major and minor version, not build ver too)
+            result = result.Substring(0,result.LastIndexOf("."));
+
+            Assert.AreEqual(".NET   5.0", result);
         }
 
         [TestMethod]

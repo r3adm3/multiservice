@@ -62,3 +62,4 @@ minikube stop
 | ----------- | ----------- | ----------- | ----------- |
 | kubectl apply -f multiservice.k8s-deployment.yaml | docker desktop / k8s | success | 2021-03-14
 | docker-compose -f docker-compose-from-lib.yml | docker desktop / k8s | success | 2021-03-14
+| docker-compose -f docker-compose.yml | docker desktop | success | 2021-03-14
