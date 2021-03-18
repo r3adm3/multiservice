@@ -15,7 +15,7 @@ spec:
         app: myservice-fe
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_frontend:latest
+      - image: daed.duckdns.org:50000/multiservice_frontend:gjetost-dev
         name: multiservice-fe
         ports:
         - containerPort: 80
@@ -42,7 +42,7 @@ spec:
         app: myservice-as
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_addsvc:latest
+      - image: daed.duckdns.org:50000/multiservice_addsvc:gjetost-dev
         name: multiservice-as
         ports:
         - containerPort: 81
@@ -64,7 +64,7 @@ spec:
         app: myservice-mxs
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_multiplysvc:latest
+      - image: daed.duckdns.org:50000/multiservice_multiplysvc:gjetost-dev
         name: multiservice-mxs
         ports:
         - containerPort: 82
@@ -86,7 +86,7 @@ spec:
         app: myservice-mis
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_minussvc:latest
+      - image: daed.duckdns.org:50000/multiservice_minussvc:gjetost-dev
         name: multiservice-mis
         ports:
         - containerPort: 83
