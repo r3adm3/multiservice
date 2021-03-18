@@ -20,8 +20,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   frontend:
-    image: daed.duckdns.org:50000/multiservice_frontend:latest
+    image: daed.duckdns.org:50000/multiservice_frontend:gjetost-dev
     ports:
-      - "18080:80"
+      - "18080:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
