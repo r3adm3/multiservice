@@ -10,13 +10,13 @@ services:
   minussvc:
     image: daed.duckdns.org:50000/multiservice_minussvc:latest
     ports:
-      - "18082:80"
+      - "18082:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   multiplysvc:
     image: daed.duckdns.org:50000/multiservice_multiplysvc:latest
     ports:
-      - "18083:80"
+      - "18083:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   frontend:
