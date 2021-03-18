@@ -3,24 +3,28 @@ version: '3'
 services:
   addsvc:
     build: './addService'
+    image: daed.duckdns.org:50000/multiservice_addsvc:gjetost-dev
     ports:
       - "18081:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   minussvc:
     build: './minusService'
+    image: daed.duckdns.org:50000/multiservice_minussvc:gjetost-dev
     ports:
       - "18082:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   multiplysvc:
     build: './multiplyService'
+    image: daed.duckdns.org:50000/multiservice_multiplysvc:gjetost-dev
     ports:
       - "18083:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   frontend:
     build: './frontEnd'
+    image: daed.duckdns.org:50000/multiservice_frontend:gjetost-dev
     ports:
       - "18080:8080"
     environment:
