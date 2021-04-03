@@ -149,30 +149,30 @@ spec:
     selector: 
       app: myservice-as
 ---
-  apiVersion: v1
-  kind: Service
-  metadata:
-    labels:
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: myservice-mxs
+  name: myservice-mxs
+spec:
+    ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+    selector: 
       app: myservice-mxs
-    name: myservice-mxs
-  spec:
-      ports:
-      - port: 80
-        protocol: TCP
-        targetPort: 8080
-      selector: 
-        app: myservice-mxs
 ---
-  apiVersion: v1
-  kind: Service
-  metadata:
-    labels:
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: myservice-mis
+  name: myservice-mis
+spec:
+    ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+    selector: 
       app: myservice-mis
-    name: myservice-mis
-  spec:
-      ports:
-      - port: 80
-        protocol: TCP
-        targetPort: 8080
-      selector: 
-        app: myservice-mis
