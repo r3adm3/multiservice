@@ -15,7 +15,7 @@ spec:
         app: myservice-fe
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_frontend:gjetost-dev
+      - image: daed.duckdns.org:50000/multiservice_frontend:{{ .Values.releaseName }}
         name: multiservice-fe
         ports:
         - containerPort: 8080
@@ -23,7 +23,7 @@ spec:
           - name: KUBEENV
             value: "true"
           - name: ASPNETCORE_ENVIRONMENT
-            value: "Production"
+            value: "Staging"
         securityContext:
             runAsNonRoot: true
             capabilities:
@@ -49,7 +49,7 @@ spec:
         app: myservice-as
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_addsvc:gjetost-dev
+      - image: daed.duckdns.org:50000/multiservice_addsvc:{{ .Values.releaseName }}
         name: multiservice-as
         ports:
         - containerPort: 8081
@@ -78,7 +78,7 @@ spec:
         app: myservice-mxs
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_multiplysvc:gjetost-dev
+      - image: daed.duckdns.org:50000/multiservice_multiplysvc:{{ .Values.releaseName }}
         name: multiservice-mxs
         ports:
         - containerPort: 8082
@@ -107,7 +107,7 @@ spec:
         app: myservice-mis
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_minussvc:gjetost-dev
+      - image: daed.duckdns.org:50000/multiservice_minussvc:{{ .Values.releaseName }}
         name: multiservice-mis
         ports:
         - containerPort: 8083
@@ -133,7 +133,7 @@ spec:
     targetPort: 8080
   selector:
     app: myservice-fe
-  type: LoadBalancer
+  type: {{ .Values.frontendSvc }}
 ---
 apiVersion: v1
 kind: Service
