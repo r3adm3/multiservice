@@ -44,12 +44,6 @@ minikube start
 kubectl create -f multiservice.k8s-deployment.yaml
 ```
 
-or as part of the Cheddar release you can now test using Skaffold
-
-```kubectl
-skaffold dev
-```
-
 Test should be able to be run using a browser, and going to <http://192.168.99.100:30500>  
 ...and cleanup
 
@@ -77,10 +71,25 @@ minikube stop
 | gjetost-dev | docker-compose -f docker-compose.yml up | docker toolbox - win |  success * | 2021-03-18  
 | gjetost-dev | kubectl apply -f multiservice.k8s-deployment.yaml | docker desktop / k8s - mac |   |  
 | gjetost-dev | kubectl apply -f multiservice.k8s-deployment.yaml | minikube - mac |   |  
-| gjetost-dev | kubectl apply -f multiservice.k8s-deployment.yaml | kmaster - mac |   |  
+| gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | kmaster - mac | success |  2021-04-04
 | gjetost-dev | kubectl apply -f multiservice.k8s-deployment.yaml | virtualbox / minikube - win | success  |  2021-03-18
 | gjetost-dev | kubectl apply -f multiservice.k8s-deployment.yaml | virtualbox / kmaster - win |   * |  
 | gjetost-dev | kubectl apply -f multiservice.k8s-deployment.prod.yaml | k8s - AKS |   |  
 | gjetost-dev | kubectl apply -f multiservice.k8s-deployment.prod.yaml | k8s - GKE |   |   |  
   
 &ast; whilst running under windows, the microservices run. Put in port forwards to the docker virtualbox for TCP 127.0.0.1:18080 - 18083 (or 30500 for kmaster), and then it'll work.
+
+Previous release:-
+| release | environment | env | tested | Date
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| Fontal | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | success | 2021-03-14
+ | Fontal | docker-compose -f docker-compose.yml up | docker desktop - mac | success | 2021-03-14
+ | Fontal | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | success * | 2021-03-15
+ | Fontal | docker-compose -f docker-compose.yml up | docker toolbox - win | success * | 2021-03-15
+ | Fontal | kubectl apply -f multiservice.k8s-deployment.yaml | docker desktop / k8s - mac | success | 2021-03-14
+ | Fontal | kubectl apply -f multiservice.k8s-deployment.yaml | minikube - mac | success | 2021-03-14
+ | Fontal | kubectl apply -f multiservice.k8s-deployment.yaml | kmaster - mac | success | 2021-03-15
+ | Fontal | kubectl apply -f multiservice.k8s-deployment.yaml | virtualbox / minikube - win | success | 2021-03-14
+ | Fontal | kubectl apply -f multiservice.k8s-deployment.yaml | virtualbox / kmaster - win | success * | 2021-03-15
+ | Fontal | kubectl apply -f multiservice.k8s-deployment.prod.yaml | k8s - AKS | success | 2021-03-15
+ | Fontal | kubectl apply -f multiservice.k8s-deployment.prod.yaml | k8s - GKE | success | 2021-03-15 |  
