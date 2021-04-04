@@ -65,16 +65,16 @@ minikube stop
 
 | release | environment | env | tested | Date
 | ----------- | ----------- | ----------- | ----------- | ----------- |
-| gjetost-dev | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac |  | 
-| gjetost-dev | docker-compose -f docker-compose.yml up | docker desktop - mac |  |
+| gjetost-dev | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | success | 2021-04-04 
+| gjetost-dev | docker-compose -f docker-compose.yml up | docker desktop - mac | success | 2021-04-04
 | gjetost-dev | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win |  | 
 | gjetost-dev | docker-compose -f docker-compose.yml up | docker toolbox - win |  success * | 2021-03-18  
-| gjetost-dev | kubectl apply -f multiservice.k8s-deployment.yaml | docker desktop / k8s - mac |   |  
-| gjetost-dev | kubectl apply -f multiservice.k8s-deployment.yaml | minikube - mac |   |  
+| gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac | success | 2021-04-04  
+| gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | minikube - mac | success | 2021-04-04
 | gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | kmaster - mac | success |  2021-04-04
-| gjetost-dev | kubectl apply -f multiservice.k8s-deployment.yaml | virtualbox / minikube - win | success  |  2021-03-18
-| gjetost-dev | kubectl apply -f multiservice.k8s-deployment.yaml | virtualbox / kmaster - win |   * |  
-| gjetost-dev | kubectl apply -f multiservice.k8s-deployment.prod.yaml | k8s - AKS |   |  
+| gjetost-dev | kubectl apply -f multiservice.k8s-deployment.yaml | virtualbox / minikube - win | success | 2021-04-04  
+| gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / kmaster - win | success * | 2021-04-04  
+| gjetost-dev | kubectl apply -f multiservice.k8s-deployment.prod.yaml | k8s - AKS |   |  |
 | gjetost-dev | kubectl apply -f multiservice.k8s-deployment.prod.yaml | k8s - GKE |   |   |  
   
 &ast; whilst running under windows, the microservices run. Put in port forwards to the docker virtualbox for TCP 127.0.0.1:18080 - 18083 (or 30500 for kmaster), and then it'll work.

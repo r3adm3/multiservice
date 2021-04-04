@@ -1,20 +1,22 @@
+# docker-compose-from-lib.yml, pulls images from docker private repo instead of building them
+# date: 2021-04-04
 version: '3'
 
 services:
   addsvc:
-    image: daed.duckdns.org:50000/multiservice_addsvc:latest
+    image: daed.duckdns.org:50000/multiservice_addsvc:gjetost-dev
     ports:
       - "18081:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development     
   minussvc:
-    image: daed.duckdns.org:50000/multiservice_minussvc:latest
+    image: daed.duckdns.org:50000/multiservice_minussvc:gjetost-dev
     ports:
       - "18082:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   multiplysvc:
-    image: daed.duckdns.org:50000/multiservice_multiplysvc:latest
+    image: daed.duckdns.org:50000/multiservice_multiplysvc:gjetost-dev
     ports:
       - "18083:8080"
     environment:

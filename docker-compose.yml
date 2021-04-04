@@ -1,3 +1,5 @@
+# docker-compose.yml, builds all containers in repo to local docker library
+# date: 2021-04-04
 version: '3'
 
 services:
