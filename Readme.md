@@ -74,8 +74,8 @@ minikube stop
 | gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | kmaster - mac | success |  2021-04-04
 | gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / minikube - win | success | 2021-04-04  
 | gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / kmaster - win | success * | 2021-04-04  
-| gjetost-dev | kubectl apply -f multiservice.k8s-deployment.prod.yaml | k8s - AKS |   |  |
-| gjetost-dev | kubectl apply -f multiservice.k8s-deployment.prod.yaml | k8s - GKE |   |   |  
+| gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml | k8s - AKS | success | 2021-04-04 |
+| gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml  | k8s - GKE | success | 2021-04-04 |  
   
 &ast; whilst running under windows, the microservices run. Put in port forwards to the docker virtualbox for TCP 127.0.0.1:18080 - 18083 (or 30500 for kmaster), and then it'll work.
 
