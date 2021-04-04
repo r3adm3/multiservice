@@ -66,13 +66,13 @@ minikube stop
 | release | environment | env | tested | Date
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | gjetost-dev | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | success | 2021-04-04 
-| gjetost-dev | docker-compose -f docker-compose.yml up | docker desktop - mac | success | 2021-04-04
-| gjetost-dev | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win |  | 
-| gjetost-dev | docker-compose -f docker-compose.yml up | docker toolbox - win |  success * | 2021-03-18  
+| gjetost-dev | docker-compose -f docker-compose.yml up --build | docker desktop - mac | success | 2021-04-04
+| gjetost-dev | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | success | 2021-04-04 
+| gjetost-dev | docker-compose -f docker-compose.yml up --build | docker toolbox - win |  success * | 2021-03-18  
 | gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac | success | 2021-04-04  
 | gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | minikube - mac | success | 2021-04-04
 | gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | kmaster - mac | success |  2021-04-04
-| gjetost-dev | kubectl apply -f multiservice.k8s-deployment.yaml | virtualbox / minikube - win | success | 2021-04-04  
+| gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / minikube - win | success | 2021-04-04  
 | gjetost-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / kmaster - win | success * | 2021-04-04  
 | gjetost-dev | kubectl apply -f multiservice.k8s-deployment.prod.yaml | k8s - AKS |   |  |
 | gjetost-dev | kubectl apply -f multiservice.k8s-deployment.prod.yaml | k8s - GKE |   |   |  
