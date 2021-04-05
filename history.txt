@@ -1,0 +1,13 @@
+  gcloud
+  gcloud auth login
+  cp C:\Users\adria\.kube\config C:\Users\adria\.kube\config.2021-04-04
+  gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project my-kube-proj-2635…
+  kubectl get nodes
+  kubectl describe pod
+  
+  az account set --subscription c5f34a30-f25c-4c8d-928f-8459030b0bee
+  az login
+  az account set --subscription c5f34a30-f25c-4c8d-928f-8459030b0bee
+  az aks get-credentials --resource-group kube1_rg --name kubecluster
+  kubectl get nodes
+  kubectl get all
