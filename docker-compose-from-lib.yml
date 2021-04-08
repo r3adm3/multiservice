@@ -4,25 +4,25 @@ version: '3'
 
 services:
   addsvc:
-    image: daed.duckdns.org:50000/multiservice_addsvc:gjetost-dev
+    image: daed.duckdns.org:50000/multiservice_addsvc:latest
     ports:
       - "18081:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development     
   minussvc:
-    image: daed.duckdns.org:50000/multiservice_minussvc:gjetost-dev
+    image: daed.duckdns.org:50000/multiservice_minussvc:latest
     ports:
       - "18082:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   multiplysvc:
-    image: daed.duckdns.org:50000/multiservice_multiplysvc:gjetost-dev
+    image: daed.duckdns.org:50000/multiservice_multiplysvc:latest
     ports:
       - "18083:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   frontend:
-    image: daed.duckdns.org:50000/multiservice_frontend:gjetost-dev
+    image: daed.duckdns.org:50000/multiservice_frontend:latest
     ports:
       - "18080:8080"
     environment:
