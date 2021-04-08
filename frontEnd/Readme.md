@@ -47,3 +47,4 @@ or (for a bit more information)
 ```dotnetcore
 dotnet test -v n
 ```
+*ver: gjetost*
