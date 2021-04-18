@@ -1,6 +1,5 @@
 #!/bin/bash
-app="docker.test"
-docker build -t ${app} .
-docker run -d -p 56733:80 \
-  --name=${app} \
+app="daed.duckdns.org:50000/addanddblservice:halloumi-dev"
+docker run -p 56733:80 \
+  --name=daedtest \
   -v $PWD:/app ${app}
