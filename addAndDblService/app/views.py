@@ -1,13 +1,17 @@
 from app import app
 from flask import render_template
 from flask import request
+import sys
+import socket
 
 @app.route('/')
 def home():
-   a = int(request.args.get('a'))
-   b = int(request.args.get('b'))
+   a = request.args.get('a')
+   b = request.args.get('b')
+   a = int(a)
+   b = int(b)
    c = 2 * (a+b)
-   return c
+   return str('{"mathresult":' + str(c) + ',"pythonver":"'+ str(sys.version_info) +'","hostname":"' + str(socket.gethostname()) + '"}')
 
 @app.route('/template')
 def template():
