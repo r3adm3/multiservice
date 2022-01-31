@@ -1,2 +1,2 @@
-containerVer: gjetost-dev
+containerVer: latest
 exposeType: NodePort

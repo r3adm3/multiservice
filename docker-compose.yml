@@ -5,7 +5,7 @@ version: '3'
 services:
   addsvc:
     build: './addService'
-    image: daed.duckdns.org:50000/multiservice_addsvc:latest
+    image: local/addservice:infossato-dev
     ports:
       - "18081:8080"
     environment:
