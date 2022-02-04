@@ -1,2 +1,6 @@
 containerVer: latest
 exposeType: LoadBalancer
+feContainerVer: latest
+mxsContainerVer: latest
+minusContainerVer: latest
+addContainerVer: latest

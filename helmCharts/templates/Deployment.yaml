@@ -15,7 +15,7 @@ spec:
         app: myservice-fe
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_frontend:{{ .Values.containerVer }}
+      - image: daed.duckdns.org:50000/multiservice_frontend:{{ .Values.feContainerVer }}
         name: multiservice-fe
         ports:
         - containerPort: 8080
@@ -49,7 +49,7 @@ spec:
         app: myservice-as
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_addsvc:{{ .Values.containerVer }}
+      - image: daed.duckdns.org:50000/multiservice_addsvc:{{ .Values.addContainerVer }}
         name: multiservice-as
         ports:
         - containerPort: 8081
@@ -78,7 +78,7 @@ spec:
         app: myservice-mxs
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_multiplysvc:{{ .Values.containerVer }}
+      - image: daed.duckdns.org:50000/multiservice_multiplysvc:{{ .Values.mxsContainerVer }}
         name: multiservice-mxs
         ports:
         - containerPort: 8082
@@ -107,7 +107,7 @@ spec:
         app: myservice-mis
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_minussvc:{{ .Values.containerVer }}
+      - image: daed.duckdns.org:50000/multiservice_minussvc:{{ .Values.minusContainerVer }}
         name: multiservice-mis
         ports:
         - containerPort: 8083
