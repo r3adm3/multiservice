@@ -24,6 +24,11 @@ services:
       - "18083:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+  addAndDblsvc:
+    build: './multiplyService'
+    image: daed.duckdns.org:50000/multiservice_addanddblsvc:latest
+    ports:
+      - "18083:8080"
   frontend:
     build: './frontEnd'
     image: daed.duckdns.org:50000/multiservice_frontend:latest
