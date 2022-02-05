@@ -1,2 +1,6 @@
-containerVer: latest
+containerVer: gjetost
 exposeType: NodePort
+feContainerVer: gjetost
+mxsContainerVer: gjetost
+minusContainerVer: gjetost
+addContainerVer: gjetost
