@@ -5,10 +5,10 @@ from flask_cors import CORS
 import sys
 import socket
 
-app = Flask(__name__)
+app = Flask (__name__)
 CORS(app)
 
-@app.route('/')
+@app.route('/api/addanddbl')
 def home():
    a = request.args.get('a')
    b = request.args.get('b')
