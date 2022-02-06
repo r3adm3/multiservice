@@ -65,10 +65,10 @@ minikube stop
 
 | release | environment | env | tested | Date
 | ----------- | ----------- | ----------- | ----------- | ----------- |
-| halloumi-dev | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | success | 2022-02-06
-| halloumi-dev | docker-compose -f docker-compose.yml up --build | docker desktop - mac | success | 2022-02-06
-| halloumi-dev | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win |  |
-| halloumi-dev | docker-compose -f docker-compose.yml up --build | docker toolbox - win |  |
+| halloumi | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | success | 2022-02-06
+| halloumi | docker-compose -f docker-compose.yml up --build | docker desktop - mac | success | 2022-02-06
+| halloumi | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | CORS errors | 2022-02-06
+| halloumi | docker-compose -f docker-compose.yml up --build | docker toolbox - win | CORS errors | 2022-02-06
 | halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac | |
 | halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | minikube - mac | |
 | halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | kmaster - mac | |
