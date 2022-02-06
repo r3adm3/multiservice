@@ -65,9 +65,9 @@ minikube stop
 
 | release | environment | env | tested | Date
 | ----------- | ----------- | ----------- | ----------- | ----------- |
-| halloumi-dev | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | |
-| halloumi-dev | docker-compose -f docker-compose.yml up --build | docker desktop - mac | |
-| halloumi-dev | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | |
+| halloumi-dev | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | success | 2022-02-06
+| halloumi-dev | docker-compose -f docker-compose.yml up --build | docker desktop - mac | success | 2022-02-06
+| halloumi-dev | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win |  |
 | halloumi-dev | docker-compose -f docker-compose.yml up --build | docker toolbox - win |  |
 | halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac | |
 | halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | minikube - mac | |
@@ -94,4 +94,4 @@ Previous release:-
 | gjetost | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml | k8s - AKS | success | 2021-04-04 |
 | gjetost | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml  | k8s - GKE | success | 2021-04-04 |  
 
- *ver: halloumi-dev*
+ *ver: halloumi*

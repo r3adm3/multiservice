@@ -16,4 +16,4 @@ In the addAndDblService folder
 docker image build -t addAndDblservice:halloumi_dev .
 ```
 
-*ver: halloumi-dev*
+*ver: halloumi*

@@ -1,2 +1,2 @@
-containerVer: halloumi-dev
+containerVer: halloumi
 exposeType: NodePort
