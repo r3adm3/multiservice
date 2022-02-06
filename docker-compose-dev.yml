@@ -31,3 +31,8 @@ services:
       - "18080:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+  addanddblsvc:
+    build: './addandDblService'
+    image: daed.duckdns.org:50000/multiservice_addanddblsvc:halloumi-dev
+    ports:
+      - "18084:80"

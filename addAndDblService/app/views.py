@@ -4,7 +4,7 @@ from flask import request
 import sys
 import socket
 
-@app.route('/')
+@app.route('/api/addanddbl')
 def home():
    a = request.args.get('a')
    b = request.args.get('b')
