@@ -67,8 +67,8 @@ minikube stop
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | halloumi | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | success | 2022-02-06
 | halloumi | docker-compose -f docker-compose.yml up --build | docker desktop - mac | success | 2022-02-06
-| halloumi | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | CORS errors | 2022-02-06
-| halloumi | docker-compose -f docker-compose.yml up --build | docker toolbox - win | CORS errors | 2022-02-06
+| halloumi | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | success &ast;| 2022-02-06
+| halloumi | docker-compose -f docker-compose.yml up --build | docker toolbox - win | success &ast; | 2022-02-06
 | halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac | |
 | halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | minikube - mac | |
 | halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | kmaster - mac | |
@@ -77,7 +77,7 @@ minikube stop
 | halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml | k8s - AKS | |
 | halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml  | k8s - GKE | |
   
-&ast; whilst running under windows, the microservices run. Put in port forwards to the docker virtualbox for TCP 127.0.0.1:18080 - 18083 (or 30500 for kmaster), and then it'll work.
+&ast; whilst running under windows, the microservices run. Put in port forwards to the docker virtualbox for TCP 127.0.0.1:18080 - 18084 (or 30500 for kmaster), and then it'll work.
 
 Previous release:-
 | release | environment | env | tested | Date
