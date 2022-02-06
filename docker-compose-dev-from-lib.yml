@@ -1,5 +1,5 @@
 # docker-compose-from-lib.yml, pulls images from docker private repo instead of building them
-# date: 2021-04-04
+# date: 2022-02-06
 version: '3'
 
 services:
@@ -27,3 +27,8 @@ services:
       - "18080:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+  addAndDblsvc:
+    build: './addAndDblService'
+    image: daed.duckdns.org:50000/multiservice_addanddblsvc:halloumi-dev
+    ports:
+      - "18084:80"

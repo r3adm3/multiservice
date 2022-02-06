@@ -1,11 +1,12 @@
 from app import app
 from flask import render_template
 from flask import request
+#from flask import Flask
 from flask_cors import CORS
 import sys
 import socket
 
-app = Flask (__name__)
+#app = Flask (__name__)
 CORS(app)
 
 @app.route('/api/addanddbl')

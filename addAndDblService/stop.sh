@@ -1,3 +1,5 @@
 #!/bin/bash
-docker container stop daedtest
-docker container rm daedtest
+docker container stop daeddev
+docker container rm daeddev
+docker container stop daedprod
+docker container rm daedprod
