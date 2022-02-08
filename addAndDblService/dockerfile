@@ -7,3 +7,4 @@ RUN pip install --upgrade pip
 RUN pip install -U flask-cors
 RUN pip install -r /var/www/requirements.txt
 COPY . . 
+EXPOSE 80

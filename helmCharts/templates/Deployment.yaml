@@ -5,7 +5,7 @@ metadata:
   labels:
     app: myservice-fe
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: myservice-fe
@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - image: daed.duckdns.org:50000/multiservice_frontend:{{ .Values.containerVer }}
+        imagePullPolicy: Always
         name: multiservice-fe
         ports:
         - containerPort: 8080
@@ -39,7 +40,7 @@ metadata:
   labels:
     app: myservice-as
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: myservice-as
@@ -68,7 +69,7 @@ metadata:
   labels:
     app: myservice-mxs
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: myservice-mxs
@@ -97,7 +98,7 @@ metadata:
   labels:
     app: myservice-mis
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: myservice-mis
@@ -118,6 +119,28 @@ spec:
                 - all
               add:
                 - NET_BIND_SERVICE
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myservice-adddbls
+  labels:
+    app: myservice-adddbls
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myservice-adddbls
+  template:
+    metadata:
+      labels:
+        app: myservice-adddbls
+    spec:
+      containers:
+      - image: daed.duckdns.org:50000/multiservice_addanddblsvc:{{ .Values.containerVer }}
+        name: multiservice-adddbls
+        ports:
+        - containerPort: 8084
 ---
 apiVersion: v1
 kind: Service
@@ -176,3 +199,17 @@ spec:
       targetPort: 8080
     selector: 
       app: myservice-mis
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: myservice-adddbls
+  name: myservice-adddbls
+spec:
+    ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 80
+    selector: 
+      app: myservice-adddbls

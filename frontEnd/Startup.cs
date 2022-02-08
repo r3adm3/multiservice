@@ -55,6 +55,9 @@ namespace frontEnd
             {
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
+                Console.WriteLine("ENV : " + env.EnvironmentName);
+                Console.WriteLine("KUBEENV : " + Environment.GetEnvironmentVariable("KUBEENV"));
+                Console.WriteLine("web1 : " + Configuration.GetSection("Logging").GetSection("addanddblServiceLink").Value);               
             }
 
             app.UseHttpsRedirection();
