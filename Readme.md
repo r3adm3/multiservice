@@ -69,13 +69,13 @@ minikube stop
 | halloumi | docker-compose -f docker-compose.yml up --build | docker desktop - mac | success | 2022-02-06
 | halloumi | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | success &ast;| 2022-02-06
 | halloumi | docker-compose -f docker-compose.yml up --build | docker toolbox - win | success &ast; | 2022-02-06
-| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac | sucess | 2022-02-08
-| halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | minikube - mac |  |
-| halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | kmaster - mac | |
-| halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / minikube - win | | 
+| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac | success | 2022-02-08
+| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | minikube - mac | success | 2022-02-09
+| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | kmaster - mac | success | 2022-02-09
+| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / minikube - win | success | 2022-02-09 
 | halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / kmaster - win | success | 2022-02-08
-| halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml | k8s - AKS | |
-| halloumi-dev | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml  | k8s - GKE | |
+| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml | k8s - AKS | success | 2022-02-09
+| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml  | k8s - GKE | success | 2022-02-09
   
 &ast; whilst running under windows, the microservices run. Put in port forwards to the docker virtualbox for TCP 127.0.0.1:18080 - 18084 (or 30500 for kmaster), and then it'll work.
 
