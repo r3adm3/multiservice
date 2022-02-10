@@ -1,6 +1,6 @@
 containerVer: gjetost-dev
 exposeType: LoadBalancer
-feContainerVer: latest
-mxsContainerVer: latest
-minusContainerVer: latest
-addContainerVer: latest
+feContainerVer: halloumi
+mxsContainerVer: halloumi
+minusContainerVer: halloumi
+addContainerVer: halloumi

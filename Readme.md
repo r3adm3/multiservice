@@ -65,6 +65,23 @@ minikube stop
 
 | release | environment | env | tested | Date
 | ----------- | ----------- | ----------- | ----------- | ----------- |
+| halloumi | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | success | 2022-02-06
+| halloumi | docker-compose -f docker-compose.yml up --build | docker desktop - mac | success | 2022-02-06
+| halloumi | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | success &ast;| 2022-02-06
+| halloumi | docker-compose -f docker-compose.yml up --build | docker toolbox - win | success &ast; | 2022-02-06
+| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac | success | 2022-02-08
+| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | minikube - mac | success | 2022-02-09
+| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | kmaster - mac | success | 2022-02-09
+| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / minikube - win | success | 2022-02-09 
+| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / kmaster - win | success | 2022-02-08
+| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml | k8s - AKS | success | 2022-02-09
+| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml  | k8s - GKE | success | 2022-02-09
+  
+&ast; whilst running under windows, the microservices run. Put in port forwards to the docker virtualbox for TCP 127.0.0.1:18080 - 18084 (or 30500 for kmaster), and then it'll work.
+
+Previous release:-
+| release | environment | env | tested | Date
+| ----------- | ----------- | ----------- | ----------- | ----------- |
 | gjetost | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | success | 2021-04-04 
 | gjetost | docker-compose -f docker-compose.yml up --build | docker desktop - mac | success | 2021-04-04
 | gjetost | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | success | 2021-04-04 
@@ -76,20 +93,5 @@ minikube stop
 | gjetost | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / kmaster - win | success * | 2021-04-04  
 | gjetost | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml | k8s - AKS | success | 2021-04-04 |
 | gjetost | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml  | k8s - GKE | success | 2021-04-04 |  
-  
-&ast; whilst running under windows, the microservices run. Put in port forwards to the docker virtualbox for TCP 127.0.0.1:18080 - 18083 (or 30500 for kmaster), and then it'll work.
 
-Previous release:-
-| release | environment | env | tested | Date
-| ----------- | ----------- | ----------- | ----------- | ----------- |
-| Fontal | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | success | 2021-03-14
- | Fontal | docker-compose -f docker-compose.yml up | docker desktop - mac | success | 2021-03-14
- | Fontal | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | success * | 2021-03-15
- | Fontal | docker-compose -f docker-compose.yml up | docker toolbox - win | success * | 2021-03-15
- | Fontal | kubectl apply -f multiservice.k8s-deployment.yaml | docker desktop / k8s - mac | success | 2021-03-14
- | Fontal | kubectl apply -f multiservice.k8s-deployment.yaml | minikube - mac | success | 2021-03-14
- | Fontal | kubectl apply -f multiservice.k8s-deployment.yaml | kmaster - mac | success | 2021-03-15
- | Fontal | kubectl apply -f multiservice.k8s-deployment.yaml | virtualbox / minikube - win | success | 2021-03-14
- | Fontal | kubectl apply -f multiservice.k8s-deployment.yaml | virtualbox / kmaster - win | success * | 2021-03-15
- | Fontal | kubectl apply -f multiservice.k8s-deployment.prod.yaml | k8s - AKS | success | 2021-03-15
- | Fontal | kubectl apply -f multiservice.k8s-deployment.prod.yaml | k8s - GKE | success | 2021-03-15 |  
+ *ver: halloumi*

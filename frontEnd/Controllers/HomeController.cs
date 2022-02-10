@@ -27,11 +27,13 @@ namespace frontEnd.Controllers
                 ViewBag.addServiceLink = "/api/Math?op=add";
                 ViewBag.minusServiceLink = "/api/Math?op=minus";
                 ViewBag.multiplyServiceLink = "/api/Math?op=multiply";
+                ViewBag.addanddblServiceLink = "/api/Math?op=addanddbl";
                
             } else {
                 ViewBag.addServiceLink = _configuration["Logging:addServiceLink"];
                 ViewBag.minusServiceLink = _configuration["Logging:minusServiceLink"];
                 ViewBag.multiplyServiceLink = _configuration["Logging:multiplyServiceLink"];
+                ViewBag.addanddblServiceLink = _configuration["Logging:addanddblServiceLink"];
             }
             return View();
         }

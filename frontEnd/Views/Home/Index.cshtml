@@ -13,6 +13,7 @@
     <button onClick="operationFunction('add')">Add</button>
     <button onClick="operationFunction('minus')" >Minus</button>
     <button onClick="operationFunction('multiply')" >Multiply</button>
+    <button onClick="operationFunction('addanddbl')" >AddDbl</button>
 
 <br /><br />
 <div id="result"></div>
@@ -29,6 +30,7 @@
         if(op==='add'){var svcLink='@Html.Raw(ViewBag.addServiceLink)'}
         if(op==='minus'){var svcLink='@Html.Raw(ViewBag.minusServiceLink)'}
         if(op==='multiply'){var svcLink='@Html.Raw(ViewBag.multiplyServiceLink)'}
+        if(op==='addanddbl'){var svcLink='@Html.Raw(ViewBag.addanddblServiceLink)'}
  
         var req = new XMLHttpRequest();
         req.open('GET', svcLink + '&a=' + aNumber + '&b=' +bNumber , true);

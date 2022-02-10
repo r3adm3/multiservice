@@ -45,6 +45,9 @@ namespace frontEnd.Controllers
                 case "multiply":
                     kubePod = "myservice-mxs";
                     break;
+                case "addanddbl":
+                    kubePod = "myservice-adddbls";
+                    break;
                 default:
                     break;
 

@@ -1,37 +1,37 @@
 # docker-compose.yml, builds all containers in repo to local docker library
-# date: 2021-04-04
+# date: 2022-02-06
 version: '3'
 
 services:
   addsvc:
     build: './addService'
-    image: daed.duckdns.org:50000/multiservice_addsvc:${DCADDSVCVER}
+    image: local/multiservice_addsvc:halloumi-dev
     ports:
       - "18081:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   minussvc:
     build: './minusService'
-    image: local/multiservice_minussvc:halloumi
+    image: local/multiservice_minussvc:halloumi-dev
     ports:
       - "18082:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   multiplysvc:
     build: './multiplyService'
-    image: local/multiservice_multiplysvc:halloumi
+    image: local/multiservice_multiplysvc:halloumi-dev
     ports:
       - "18083:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   addAndDblsvc:
     build: './addAndDblService'
-    image: local/multiservice_addanddblsvc:halloumi
+    image: local/multiservice_addanddblsvc:halloumi-dev
     ports:
       - "18084:80"
   frontend:
     build: './frontEnd'
-    image: local/multiservice_frontend:halloumi
+    image: local/multiservice_frontend:halloumi-dev
     ports:
       - "18080:8080"
     environment:

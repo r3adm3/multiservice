@@ -49,12 +49,15 @@ namespace frontEnd
                 app.UseDeveloperExceptionPage();
                 Console.WriteLine("ENV : " + env.EnvironmentName);
                 Console.WriteLine("KUBEENV : " + Environment.GetEnvironmentVariable("KUBEENV"));
-                Console.WriteLine("web1 : " + Configuration.GetSection("Logging").GetSection("addServiceLink").Value);
+                Console.WriteLine("web1 : " + Configuration.GetSection("Logging").GetSection("addanddblServiceLink").Value);
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
+                Console.WriteLine("ENV : " + env.EnvironmentName);
+                Console.WriteLine("KUBEENV : " + Environment.GetEnvironmentVariable("KUBEENV"));
+                Console.WriteLine("web1 : " + Configuration.GetSection("Logging").GetSection("addanddblServiceLink").Value);               
             }
 
             app.UseHttpsRedirection();

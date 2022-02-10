@@ -1,6 +1,6 @@
-containerVer: gjetost
+containerVer: halloumi
 exposeType: NodePort
-feContainerVer: gjetost
-mxsContainerVer: gjetost
-minusContainerVer: gjetost
-addContainerVer: gjetost
+feContainerVer: halloumi
+mxsContainerVer: halloumi
+minusContainerVer: halloumi
+addContainerVer: halloumi
