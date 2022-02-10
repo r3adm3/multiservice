@@ -49,7 +49,7 @@ spec:
         app: myservice-as
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_addsvc:{{ .Values.addContainerVer }}
+      - image: local/multiservice_addsvc:{{ .Values.addContainerVer }}
         name: multiservice-as
         ports:
         - containerPort: 8081

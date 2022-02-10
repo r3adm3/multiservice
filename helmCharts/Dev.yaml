@@ -3,4 +3,4 @@ exposeType: NodePort
 feContainerVer: halloumi
 mxsContainerVer: halloumi
 minusContainerVer: halloumi
-addContainerVer: halloumi
+addContainerVer: infossato-dev

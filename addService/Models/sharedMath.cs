@@ -1,5 +1,6 @@
 using System;
 using System.Net;
+using System.Configuration;
 using Microsoft.Extensions.Configuration; 
 
 namespace multiservice.Models
@@ -32,6 +33,12 @@ namespace multiservice.Models
         public string hostname {get
             {
                 return Environment.MachineName;
+            }
+        }
+
+        public string myversion {get
+            {
+                return "infossato-dev";
             }
         }
 
