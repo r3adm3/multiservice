@@ -12,7 +12,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
   minussvc:
     build: './minusService'
-    image: daed.duckdns.org:50000/multiservice_minussvc:${DCMINUSSVCVER}
+    image: local/multiservice_minussvc:${DCMINUSSVCVER}
     ports:
       - "18082:8080"
     environment:
