@@ -6,7 +6,7 @@ Parent repo: <http://github.com/r3adm3/multiservice>
 
 ## Dependencies
 
-Current version of dotnet core this has been tested with is .NET 5.0 on Windows/Mac
+Current version of dotnet core this has been tested with is .NET 6.0 on Windows/Mac
 
 ## Compile it
 
@@ -33,7 +33,7 @@ Change "a" and "b" to whatever you want. Result that comes back is JSON, includi
 In the multiplyService folder
 
 ```docker
-docker image build -t multiplysvc:edam_dev .
+docker image build -t multiplysvc:infosatto_dev .
 ```
 
 ## How do I run a test
@@ -49,4 +49,4 @@ or (for a bit more information)
 ```dotnetcore
 dotnet test -v n
 ```
-*ver: halloumi*
+*ver: infosatto-dev*

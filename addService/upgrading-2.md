@@ -32,7 +32,7 @@ curl http://localhost:8080/api/add\?a=1\&b=2
 result:
 {"mathresult":3,"dotnetver":".NET   6.0.1","hostname":"20e05fc386b3"}
 ```
-6. change /docker-compose.yml to point to local addservice
+6. (make localImagesUpdateAndRun) /docker-compose.yml to point to local addservice
 
 docker-compose up
 
@@ -43,3 +43,4 @@ http://localhost:18080
 8. Clean up
 
 docker-compose down
+make cleanup

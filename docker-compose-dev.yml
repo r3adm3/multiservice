@@ -19,7 +19,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
   multiplysvc:
     build: './multiplyService'
-    image: daed.duckdns.org:50000/multiservice_multiplysvc:${DCMXSSVCVER}
+    image: local/multiservice_multiplysvc:${DCMXSSVCVER}
     ports:
       - "18083:8080"
     environment:

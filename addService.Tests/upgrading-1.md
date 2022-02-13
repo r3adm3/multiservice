@@ -15,3 +15,5 @@ dotnet test
 if successful move onto service. 
 
 ..\addService\upgrading-2.md
+
+3. change .env for docker compose for new dev
