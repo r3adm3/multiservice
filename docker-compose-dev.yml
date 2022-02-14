@@ -31,7 +31,7 @@ services:
       - "18084:80"
   frontend:
     build: './frontEnd'
-    image: daed.duckdns.org:50000/multiservice_frontend:${DCFESVCVER}
+    image: localhost/multiservice_frontend:${DCFESVCVER}
     ports:
       - "18080:8080"
     environment:

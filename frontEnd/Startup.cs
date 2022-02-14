@@ -16,7 +16,7 @@ namespace frontEnd
     public class Startup
     {
 
-        public Startup(IConfiguration configuration, IHostingEnvironment env)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;                        
         }
@@ -35,16 +35,16 @@ namespace frontEnd
             });
 
             services.AddCors();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddMvc(option => option.EnableEndpointRouting = false);
             services.AddSingleton<IConfiguration>(Configuration);
          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment() || env.IsStaging())
+            if (env.EnvironmentName == "Development" || env.EnvironmentName == "Staging")
             {
                 app.UseDeveloperExceptionPage();
                 Console.WriteLine("ENV : " + env.EnvironmentName);

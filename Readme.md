@@ -13,7 +13,8 @@ Dependencies:-
 Docker CE  
 VirtualBox  
 Minikube  
-Dotnet SDK 5.0 and 6.0
+Dotnet SDK 6.0
+Python 3
 
 Any of the component microservices can be tested and run individually with a simple by cd'ing into its directory. Check the Readme.md for details on runtime, compile and docker build instructions
 
