@@ -4,31 +4,31 @@ version: '3'
 
 services:
   addsvc:
-    image: daed.duckdns.org:50000/multiservice_addsvc:halloumi-dev
+    image: daed.duckdns.org:50000/multiservice_addsvc:${DCADDSVCVER}
     ports:
       - "18081:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development     
   minussvc:
-    image: daed.duckdns.org:50000/multiservice_minussvc:halloumi-dev
+    image: daed.duckdns.org:50000/multiservice_minussvc:${DCMINUSSVCVER}
     ports:
       - "18082:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   multiplysvc:
-    image: daed.duckdns.org:50000/multiservice_multiplysvc:halloumi-dev
+    image: daed.duckdns.org:50000/multiservice_multiplysvc:${DCMXSSVCVER}
     ports:
       - "18083:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   frontend:
-    image: daed.duckdns.org:50000/multiservice_frontend:halloumi-dev
+    image: daed.duckdns.org:50000/multiservice_frontend:${DCFESVCVER}
     ports:
       - "18080:8080"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
   addAndDblsvc:
     build: './addAndDblService'
-    image: daed.duckdns.org:50000/multiservice_addanddblsvc:halloumi-dev
+    image: daed.duckdns.org:50000/multiservice_addanddblsvc:${DCADBLSVCVER}
     ports:
       - "18084:80"

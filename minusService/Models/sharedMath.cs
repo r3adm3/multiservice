@@ -34,7 +34,11 @@ namespace multiservice.Models
                 return Environment.MachineName;
             }
         }
-
+        public string myversion {get
+            {
+                return "infossato-dev";
+            }
+        }
     }
 
 

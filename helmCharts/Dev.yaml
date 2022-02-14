@@ -1,2 +1,6 @@
 containerVer: halloumi
 exposeType: NodePort
+feContainerVer: halloumi
+mxsContainerVer: halloumi
+minusContainerVer: halloumi
+addContainerVer: infossato-dev

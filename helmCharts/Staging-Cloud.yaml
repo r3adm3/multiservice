@@ -1,2 +1,6 @@
-containerVer: halloumi
+containerVer: gjetost-dev
 exposeType: LoadBalancer
+feContainerVer: halloumi
+mxsContainerVer: halloumi
+minusContainerVer: halloumi
+addContainerVer: halloumi

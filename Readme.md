@@ -13,7 +13,8 @@ Dependencies:-
 Docker CE  
 VirtualBox  
 Minikube  
-Dotnet SDK 3.1 and 5.0
+Dotnet SDK 6.0
+Python 3
 
 Any of the component microservices can be tested and run individually with a simple by cd'ing into its directory. Check the Readme.md for details on runtime, compile and docker build instructions
 
@@ -65,6 +66,23 @@ minikube stop
 
 | release | environment | env | tested | Date
 | ----------- | ----------- | ----------- | ----------- | ----------- |
+| infossato-dev | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | |
+| infossato-dev | docker-compose -f docker-compose.yml up --build | docker desktop - mac | |
+| infossato-dev | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | |
+| infossato-dev | docker-compose -f docker-compose.yml up --build | docker toolbox - win | |
+| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac | |
+| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | minikube - mac | |
+| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | kmaster - mac | |
+| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / minikube - win | |
+| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / kmaster - win | |
+| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml | k8s - AKS | |
+| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml  | k8s - GKE |  | 
+  
+&ast; whilst running under windows, the microservices run. Put in port forwards to the docker virtualbox for TCP 127.0.0.1:18080 - 18084 (or 30500 for kmaster), and then it'll work.
+
+Previous release:-
+| release | environment | env | tested | Date
+| ----------- | ----------- | ----------- | ----------- | ----------- |
 | halloumi | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | success | 2022-02-06
 | halloumi | docker-compose -f docker-compose.yml up --build | docker desktop - mac | success | 2022-02-06
 | halloumi | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | success &ast;| 2022-02-06
@@ -76,22 +94,5 @@ minikube stop
 | halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / kmaster - win | success | 2022-02-08
 | halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml | k8s - AKS | success | 2022-02-09
 | halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml  | k8s - GKE | success | 2022-02-09
-  
-&ast; whilst running under windows, the microservices run. Put in port forwards to the docker virtualbox for TCP 127.0.0.1:18080 - 18084 (or 30500 for kmaster), and then it'll work.
 
-Previous release:-
-| release | environment | env | tested | Date
-| ----------- | ----------- | ----------- | ----------- | ----------- |
-| gjetost | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | success | 2021-04-04 
-| gjetost | docker-compose -f docker-compose.yml up --build | docker desktop - mac | success | 2021-04-04
-| gjetost | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | success | 2021-04-04 
-| gjetost | docker-compose -f docker-compose.yml up --build | docker toolbox - win |  success * | 2021-03-18  
-| gjetost | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac | success | 2021-04-04  
-| gjetost | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | minikube - mac | success | 2021-04-04
-| gjetost | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | kmaster - mac | success |  2021-04-04
-| gjetost | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / minikube - win | success | 2021-04-04  
-| gjetost | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / kmaster - win | success * | 2021-04-04  
-| gjetost | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml | k8s - AKS | success | 2021-04-04 |
-| gjetost | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml  | k8s - GKE | success | 2021-04-04 |  
-
- *ver: halloumi*
+ *ver: infossato-dev*

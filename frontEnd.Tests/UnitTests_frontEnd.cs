@@ -9,13 +9,10 @@ namespace frontEnd.Tests
     [TestClass]
     public class unitTests_homeController
     {
-        
-        IConfiguration _configuration;
-
-        [TestMethod]
+       [TestMethod]
         public void HomeControllerCanInstantiate()
         {
-            var controller = new HomeController(_configuration);
+            var controller = new HomeController(null);
 
             var result = controller.About();
 
@@ -26,12 +23,10 @@ namespace frontEnd.Tests
         [TestMethod]
         public void MathControllerCanInstantiate()
         {
-            var controller = new MathController(_configuration);
+            var controller = new MathController(null);
 
             Assert.IsNotNull(controller);
 
         }
-
-
     }
 }

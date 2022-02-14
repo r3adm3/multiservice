@@ -41,7 +41,7 @@ namespace minusService.Tests
             // only grab the semver major and minor version, not build ver too)
             result = result.Substring(0,result.LastIndexOf("."));
 
-            Assert.AreEqual(".NET   5.0", result);
+            Assert.AreEqual(".NET   6.0", result);
         }
 
         [TestMethod]
