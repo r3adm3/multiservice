@@ -26,12 +26,12 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
   addAndDblsvc:
     build: './addAndDblService'
-    image: daed.duckdns.org:50000/multiservice_addanddblsvc:${DCADBLSVCVER}
+    image: local/multiservice_addanddblsvc:${DCADBLSVCVER}
     ports:
       - "18084:80"
   frontend:
     build: './frontEnd'
-    image: localhost/multiservice_frontend:${DCFESVCVER}
+    image: local/multiservice_frontend:${DCFESVCVER}
     ports:
       - "18080:8080"
     environment:
