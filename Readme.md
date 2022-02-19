@@ -10,11 +10,12 @@ Should work on Windows and Macs (possibly Linux, not tried it yet)
 Clone the repo.
 
 Dependencies:-
-Docker CE  
-VirtualBox  
-Minikube  
-Dotnet SDK 6.0
-Python 3
+Docker CE | 4.5.0 (74594) 
+VirtualBox | 6.1.32 r149290
+Minikube | 1.25.1
+Dotnet SDK 6.0 | 6.0.100
+Python 3 | 3.6.9
+Helm | 3.7.1
 
 Any of the component microservices can be tested and run individually with a simple by cd'ing into its directory. Check the Readme.md for details on runtime, compile and docker build instructions
 
@@ -70,11 +71,11 @@ minikube stop
 | infossato-dev | docker-compose -f docker-compose.yml up --build | docker desktop - mac | |
 | infossato-dev | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | |
 | infossato-dev | docker-compose -f docker-compose.yml up --build | docker toolbox - win | |
-| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac | |
-| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | minikube - mac | |
-| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | kmaster - mac | |
-| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / minikube - win | |
-| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / kmaster - win | |
+| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac | success |2022-02-19
+| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev-OnPrem.yaml | minikube - mac | |
+| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev-OnPrem.yaml | kmaster - mac | |
+| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev-OnPrem.yaml | virtualbox / minikube - win | |
+| infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev-OnPrem.yaml | virtualbox / kmaster - win | |
 | infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml | k8s - AKS | |
 | infossato-dev | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml  | k8s - GKE |  | 
   

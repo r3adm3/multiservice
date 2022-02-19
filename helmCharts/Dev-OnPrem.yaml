@@ -4,4 +4,4 @@ feContainerVer: infossato-dev
 mxsContainerVer: infossato-dev
 minusContainerVer: infossato-dev
 addContainerVer: infossato-dev
-locationOfImages: local
+locationOfImages: daed.duckdns.org:50000

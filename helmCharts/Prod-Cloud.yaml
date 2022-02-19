@@ -4,3 +4,4 @@ feContainerVer: latest
 mxsContainerVer: latest
 minusContainerVer: latest
 addContainerVer: latest
+locationOfImages: daed.duckdns.org:50000
