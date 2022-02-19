@@ -1,6 +1,7 @@
-containerVer: gjetost-dev
+containerVer: infosatto-rc1
 exposeType: LoadBalancer
-feContainerVer: halloumi
-mxsContainerVer: halloumi
-minusContainerVer: halloumi
-addContainerVer: halloumi
+feContainerVer: infosatto-rc1
+mxsContainerVer: infosatto-rc1
+minusContainerVer: infosatto-rc1
+addContainerVer: infosatto-rc1
+locationOfImages: daed.duckdns.org:50000

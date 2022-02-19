@@ -13,7 +13,7 @@ Current version of Python this has been tested with is Python 3.9 on Windows/Mac
 In the addAndDblService folder
 
 ```docker
-docker image build -t addAndDblservice:halloumi_dev .
+docker image build -t addAndDblservice:infossato_dev .
 ```
 
-*ver: halloumi*
+*ver: infossato-dev*

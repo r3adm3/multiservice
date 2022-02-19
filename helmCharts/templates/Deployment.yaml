@@ -15,7 +15,7 @@ spec:
         app: myservice-fe
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_frontend:{{ .Values.feContainerVer }}
+      - image: {{ .Values.locationOfImages }}/multiservice_frontend:{{ .Values.feContainerVer }}
         name: multiservice-fe
         ports:
         - containerPort: 8080
@@ -25,6 +25,7 @@ spec:
           - name: ASPNETCORE_ENVIRONMENT
             value: "Production"
         securityContext:
+            allowPrivilegeEscalation: false
             runAsNonRoot: true
             capabilities:
               drop:
@@ -49,11 +50,12 @@ spec:
         app: myservice-as
     spec:
       containers:
-      - image: local/multiservice_addsvc:{{ .Values.addContainerVer }}
+      - image: {{ .Values.locationOfImages }}/multiservice_addsvc:{{ .Values.addContainerVer }}
         name: multiservice-as
         ports:
         - containerPort: 8081
         securityContext:
+            allowPrivilegeEscalation: false
             runAsNonRoot: true
             capabilities:
               drop:
@@ -78,11 +80,12 @@ spec:
         app: myservice-mxs
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_multiplysvc:{{ .Values.mxsContainerVer }}
+      - image: {{ .Values.locationOfImages }}/multiservice_multiplysvc:{{ .Values.mxsContainerVer }}
         name: multiservice-mxs
         ports:
         - containerPort: 8082
         securityContext:
+            allowPrivilegeEscalation: false
             runAsNonRoot: true
             capabilities:
               drop:
@@ -107,11 +110,12 @@ spec:
         app: myservice-mis
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_minussvc:{{ .Values.minusContainerVer }}
+      - image: {{ .Values.locationOfImages }}/multiservice_minussvc:{{ .Values.minusContainerVer }}
         name: multiservice-mis
         ports:
         - containerPort: 8083
         securityContext:
+            allowPrivilegeEscalation: false
             runAsNonRoot: true
             capabilities:
               drop:
@@ -136,10 +140,17 @@ spec:
         app: myservice-adddbls
     spec:
       containers:
-      - image: daed.duckdns.org:50000/multiservice_addanddblsvc:{{ .Values.containerVer }}
+      - image: {{ .Values.locationOfImages }}/multiservice_addanddblsvc:{{ .Values.containerVer }}
         name: multiservice-adddbls
         ports:
         - containerPort: 8084
+        securityContext:
+           allowPrivilegeEscalation: false
+           capabilities:
+             drop:
+               - all
+             add:
+               - NET_BIND_SERVICE
 ---
 apiVersion: v1
 kind: Service

@@ -38,7 +38,7 @@ namespace multiservice.Models
 
         public string myversion {get
             {
-                return "infossato-dev";
+                return "infossato-rc1";
             }
         }
 

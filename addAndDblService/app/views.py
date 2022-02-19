@@ -16,7 +16,7 @@ def home():
    a = int(a)
    b = int(b)
    c = 2 * (a+b)
-   return str('{"mathresult":' + str(c) + ',"pythonver":"'+ str(sys.version_info) +'","hostname":"' + str(socket.gethostname()) + '","version":"infossato-dev"}')
+   return str('{"mathresult":' + str(c) + ',"pythonver":"'+ str(sys.version_info) +'","hostname":"' + str(socket.gethostname()) + '","version":"infossato-rc1"}')
 
 @app.route('/api/Math')
 def math():
