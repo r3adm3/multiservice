@@ -1,7 +1,7 @@
-containerVer: infossato-dev
+containerVer: infossato-rc1
 exposeType: NodePort
-feContainerVer: infossato-dev
-mxsContainerVer: infossato-dev
-minusContainerVer: infossato-dev
-addContainerVer: infossato-dev
+feContainerVer: infossato-rc1
+mxsContainerVer: infossato-rc1
+minusContainerVer: infossato-rc1
+addContainerVer: infossato-rc1
 locationOfImages: daed.duckdns.org:50000

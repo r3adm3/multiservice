@@ -1,7 +1,7 @@
-containerVer: infosatto-dev
+containerVer: infosatto-rc1
 exposeType: LoadBalancer
-feContainerVer: infosatto-dev
-mxsContainerVer: infosatto-dev
-minusContainerVer: infosatto-dev
-addContainerVer: infosatto-dev
+feContainerVer: infosatto-rc1
+mxsContainerVer: infosatto-rc1
+minusContainerVer: infosatto-rc1
+addContainerVer: infosatto-rc1
 locationOfImages: daed.duckdns.org:50000
