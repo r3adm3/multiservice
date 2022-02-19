@@ -1,7 +1,0 @@
-- Upgrade to .NET 6
-- version in output string (from config file)
-- clear as many errors from dotnet build as poss
-- Upgrade bootstrap/jquery
-- snyk reporting less errors in code
-- snyk kube yaml reporting less errors
-- make it easy to test different versions of container services. 
