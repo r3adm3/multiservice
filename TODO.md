@@ -1,5 +1,4 @@
 To do
-- snyk kube yaml reporting less errors
 - make sure azure devops has a pipeline to create andanddbl image.
 - go back and populate images from previously tagged versions (Fontal, Edam and Danbo)
 
@@ -21,3 +20,7 @@ Done
 - Upgrade bootstrap/jquery
 - clear as many errors from dotnet build as poss
 - make it easy to test different versions of container services. 
+- snyk kube yaml reporting less errors
+
+To do (next ver)
+- Make python container not run as root. 
