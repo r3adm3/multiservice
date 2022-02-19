@@ -1,4 +1,7 @@
 To do
+- Make python container not run as root. 
+- New FrontEnd (fresh dotnet new)
+- kube deployment yaml update cpu, memory, root filesystem writes, liveness probes
 - make sure azure devops has a pipeline to create andanddbl image.
 - go back and populate images from previously tagged versions (Fontal, Edam and Danbo)
 
@@ -14,13 +17,5 @@ To do
 |Babybel|running all services (all exposed services tho)|2019-10-16|
 |Accasciato|microservices running together in docker compose|2019-10-01|
 
-Done
-- snyk reporting less errors in code
-- Upgrade to .NET 6
-- Upgrade bootstrap/jquery
-- clear as many errors from dotnet build as poss
-- make it easy to test different versions of container services. 
-- snyk kube yaml reporting less errors
 
 To do (next ver)
-- Make python container not run as root. 
