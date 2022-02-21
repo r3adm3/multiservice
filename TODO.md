@@ -1,4 +1,4 @@
-To do
+To do (Jarlsberg)
 - Make python container not run as root. 
 - New FrontEnd (fresh dotnet new)
 - kube deployment yaml update cpu, memory, root filesystem writes, liveness probes
@@ -7,7 +7,7 @@ To do
 
 |Version|Main Diff|Rel Date|Done
 |--|--|--|--|
-|Infossato|.NET 6, easier builds|RC1|
+|Infossato|.NET 6, easier builds|2022-02-21|Uploaded
 |Halloumi|Added new python Microservice|2022-02-09|Uploaded
 |Gjetost|Azure pipelines yaml, helm deploys|2021-04-08|Uploaded
 |Fontal|Upgrade to .NET 3->5, jenkins automation|2021-03-15||

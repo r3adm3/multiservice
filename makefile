@@ -8,7 +8,7 @@ localImagesUpdateAndRun: ## Updates the localImages and executes
 
 cleanupPrePush: ## cleanup local images
 	docker-compose down
-	docker rmi $$(docker images | grep info | tr -s ' ' | cut -d ' ' -f 3)
+	docker rmi $$(docker images | grep jarl | tr -s ' ' | cut -d ' ' -f 3)
 
 tagDevImagesandPush: ## tag up images 
 
