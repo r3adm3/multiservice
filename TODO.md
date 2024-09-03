@@ -1,4 +1,4 @@
-To do (Jarlsberg)
+To do (Kashkaval-dev)
 - Make python container not run as root. 
 - New FrontEnd (fresh dotnet new)
 - kube deployment yaml update cpu, memory, root filesystem writes, liveness probes
@@ -7,6 +7,8 @@ To do (Jarlsberg)
 
 |Version|Main Diff|Rel Date|Done
 |--|--|--|--|
+|Kashkaval|.NET 9, tidy ups, agent upgrades||Development
+|Jarlsberg|Missed|||
 |Infossato|.NET 6, easier builds|2022-02-21|Uploaded
 |Halloumi|Added new python Microservice|2022-02-09|Uploaded
 |Gjetost|Azure pipelines yaml, helm deploys|2021-04-08|Uploaded
