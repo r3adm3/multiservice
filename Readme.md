@@ -67,6 +67,22 @@ minikube stop
 
 | release | environment | env | tested | Date
 | ----------- | ----------- | ----------- | ----------- | ----------- |
+| kashkaval-dev | docker-compose -f docker-compose-dev-from-lib.yml up | docker desktop - mac |  | 
+| kashkaval-dev | docker-compose -f docker-compose-dev.yml up --build | docker desktop - mac |  | 
+| kashkaval-dev | docker-compose -f docker-compose-dev-from-lib.yml up | docker toolbox - win |  | 
+| kashkaval-dev | docker-compose -f docker-compose-dev.yml up --build | docker toolbox - win |  | 
+| kashkaval-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac |  | 
+| kashkaval-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev-OnPrem.yaml | docker desktop / k8s - mac |  | 
+| kashkaval-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev-OnPrem.yaml | minikube - mac |  | 
+| kashkaval-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev-OnPrem.yaml | kmaster - mac |  | 
+| kashkaval-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev-OnPrem.yaml | virtualbox / minikube - win |  | 
+| kashkaval-dev | helm install multiservice ./helmCharts -f ./helmCharts/Dev-OnPrem.yaml | virtualbox / kmaster - win |  | 
+| kashkaval-dev | helm install multiservice ./helmCharts -f ./helmCharts/Prod-Cloud.yaml | k8s - AKS |  | 
+| kashkaval-dev | helm install multiservice ./helmCharts -f ./helmCharts/Prod-Cloud.yaml  | k8s - GKE |  | 
+  
+&ast; whilst running under windows, the microservices run. Put in port forwards to the docker virtualbox for TCP 127.0.0.1:18080 - 18084 (or 30500 for kmaster), and then it'll work.
+
+Previous release:-
 | infossato | docker-compose -f docker-compose-dev-from-lib.yml up | docker desktop - mac | success | 2022-02-19
 | infossato | docker-compose -f docker-compose-dev.yml up --build | docker desktop - mac | success | 2022-02-19
 | infossato | docker-compose -f docker-compose-dev-from-lib.yml up | docker toolbox - win | success | 2022-02-21
@@ -79,22 +95,5 @@ minikube stop
 | infossato | helm install multiservice ./helmCharts -f ./helmCharts/Dev-OnPrem.yaml | virtualbox / kmaster - win | success | 2022-02-19
 | infossato | helm install multiservice ./helmCharts -f ./helmCharts/Prod-Cloud.yaml | k8s - AKS | success | 2022-02-21
 | infossato | helm install multiservice ./helmCharts -f ./helmCharts/Prod-Cloud.yaml  | k8s - GKE | success | 2022-02-21 
-  
-&ast; whilst running under windows, the microservices run. Put in port forwards to the docker virtualbox for TCP 127.0.0.1:18080 - 18084 (or 30500 for kmaster), and then it'll work.
 
-Previous release:-
-| release | environment | env | tested | Date
-| ----------- | ----------- | ----------- | ----------- | ----------- |
-| halloumi | docker-compose -f docker-compose-from-lib.yml up | docker desktop - mac | success | 2022-02-06
-| halloumi | docker-compose -f docker-compose.yml up --build | docker desktop - mac | success | 2022-02-06
-| halloumi | docker-compose -f docker-compose-from-lib.yml up | docker toolbox - win | success &ast;| 2022-02-06
-| halloumi | docker-compose -f docker-compose.yml up --build | docker toolbox - win | success &ast; | 2022-02-06
-| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | docker desktop / k8s - mac | success | 2022-02-08
-| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | minikube - mac | success | 2022-02-09
-| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | kmaster - mac | success | 2022-02-09
-| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / minikube - win | success | 2022-02-09 
-| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Dev.yaml | virtualbox / kmaster - win | success | 2022-02-08
-| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml | k8s - AKS | success | 2022-02-09
-| halloumi | helm install multiservice ./helmCharts -f ./helmCharts/Staging-Cloud.yaml  | k8s - GKE | success | 2022-02-09
-
- *ver: infossato*
+ *ver: kashkaval-dev*

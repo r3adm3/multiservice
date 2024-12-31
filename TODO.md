@@ -1,8 +1,10 @@
 To do (Kashkaval-dev)
 - Make python container not run as root. 
+- Python update
 - New FrontEnd (fresh dotnet new)
 - kube deployment yaml update cpu, memory, root filesystem writes, liveness probes
 - make sure azure devops has a pipeline to create andanddbl image.
+- Implement owasp, grype, gitleaks
 - go back and populate images from previously tagged versions (Fontal, Edam and Danbo)
 
 |Version|Main Diff|Rel Date|Done
