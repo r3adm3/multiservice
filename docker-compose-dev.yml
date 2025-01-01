@@ -30,8 +30,8 @@ services:
     ports:
       - "18084:80"
   frontend:
-    build: './frontEnd'
-    image: local/multiservice_frontend:${DCFESVCVER}
+    build: './frontEnd2'
+    image: local/multiservice_frontend2:${DCFESVCVER}
     ports:
       - "18080:8080"
     environment:
