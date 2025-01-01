@@ -16,4 +16,4 @@ In the addAndDblService folder
 docker image build -t addAndDblservice:infossato_dev .
 ```
 
-*ver: infossato-dev*
+*ver: kashkaval-dev*

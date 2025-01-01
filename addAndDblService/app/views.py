@@ -16,7 +16,7 @@ def home():
    a = int(a)
    b = int(b)
    c = 2 * (a+b)
-   return str('{"mathresult":' + str(c) + ',"pythonver":"'+ str(sys.version_info) +'","hostname":"' + str(socket.gethostname()) + '","version":"infossato"}')
+   return str('{"mathresult":' + str(c) + ',"pythonver":"'+ str(sys.version_info) +'","hostname":"' + str(socket.gethostname()) + '","version":"kashkaval-dev"}')
 
 @app.route('/api/Math')
 def math():
@@ -25,7 +25,7 @@ def math():
    a = int(a)
    b = int(b)
    c = 2 * (a+b)
-   return str('{"mathresult":' + str(c) + ',"pythonver":"'+ str(sys.version_info) +'","hostname":"' + str(socket.gethostname()) + '","version":"infossato"}')
+   return str('{"mathresult":' + str(c) + ',"pythonver":"'+ str(sys.version_info) +'","hostname":"' + str(socket.gethostname()) + '","version":"kashkaval-dev"}')
 
 @app.route('/template')
 def template():
