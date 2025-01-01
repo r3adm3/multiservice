@@ -3,7 +3,7 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Monolithsvc</h1>
+    <h1 class="display-4">Multiservice</h1>
     <p>Learn about it here: <a href="http://github.com/r3adm3/multiservice">constructing monoliths and multiservice</a>.</p>
 </div>
 
@@ -11,34 +11,40 @@
 <br/>
 <table>
   <tr><td>First no: </td><td><input type="text" id="a"></td></tr>
-  <tr><td>Second no: </td><td><input type="text" id="b"></td></tr>
+  <tr><td>Second no: </td><td><input type="text" id="b"></td><br>
+
 </table>
 <br />
     <button onClick="operationFunction('add')">Add</button>
     <button onClick="operationFunction('minus')" >Minus</button>
     <button onClick="operationFunction('multiply')" >Multiply</button>
+    <button onClick="operationFunction('addanddbl')" >AddDbl</button>
+
 <br /><br />
 <div id="result"></div>
 <br /><br />
+<p>::@ViewBag.myData::</p>
 
 <script>
     function operationFunction(op) {
 
         var aNumber = document.getElementById("a").value
         var bNumber = document.getElementById("b").value
+        var kubeConfig = '@(ViewBag.kubeEnv)'
 
-        if(op==='add'){var svcLink='api/add?'}
-        if(op==='minus'){var svcLink='api/minus?'}
-        if(op==='multiply'){var svcLink='api/multiply?'}
-        
+        if(op==='add'){var svcLink='@Html.Raw(ViewBag.addServiceLink)'}
+        if(op==='minus'){var svcLink='@Html.Raw(ViewBag.minusServiceLink)'}
+        if(op==='multiply'){var svcLink='@Html.Raw(ViewBag.multiplyServiceLink)'}
+        if(op==='addanddbl'){var svcLink='@Html.Raw(ViewBag.addanddblServiceLink)'}
+ 
         var req = new XMLHttpRequest();
-        req.open('GET', svcLink + 'a=' + aNumber + '&b=' +bNumber , true);
+        req.open('GET', svcLink + '&a=' + aNumber + '&b=' +bNumber , true);
 
         req.onload = function () {
             if (req.status >= 200 && req.status < 400) {
-                console.log ('result ' + req.responseText);
+                console.log ('result ' + req.responseText );
                 var result = req.responseText;
-                document.getElementById("result").innerHTML = "Result " + result;
+                document.getElementById("result").innerHTML = "Result " + result ;
             } else {
                 alert('Oh dear!');
             }
