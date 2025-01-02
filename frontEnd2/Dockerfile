@@ -28,4 +28,4 @@ USER non-root-user
 
 WORKDIR /app
 COPY --from=builder /app .
-ENTRYPOINT ["dotnet", "frontEnd.dll"]
+ENTRYPOINT ["dotnet", "frontEnd2.dll"]

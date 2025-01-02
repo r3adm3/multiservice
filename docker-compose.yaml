@@ -1,0 +1,38 @@
+# docker-compose.yml, builds all containers in repo to local docker library
+# date: 2022-02-06
+version: '3'
+
+services:
+  addsvc:
+    build: './addService'
+    image: local/multiservice_addsvc:${DCADDSVCVER}
+    ports:
+      - "18081:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+  minussvc:
+    build: './minusService'
+    image: local/multiservice_minussvc:${DCMINUSSVCVER}
+    ports:
+      - "18082:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+  multiplysvc:
+    build: './multiplyService'
+    image: local/multiservice_multiplysvc:${DCMXSSVCVER}
+    ports:
+      - "18083:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+  addAndDblsvc:
+    build: './addAndDblService'
+    image: local/multiservice_addanddblsvc:${DCADBLSVCVER}
+    ports:
+      - "18084:80"
+  frontend:
+    build: './frontEnd2'
+    image: local/multiservice_frontend2:${DCFESVCVER}
+    ports:
+      - "18080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development

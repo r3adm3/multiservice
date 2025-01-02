@@ -36,7 +36,7 @@ namespace multiservice.Models
         }
         public string myversion {get
             {
-                return "infossato";
+                return "kashkaval-dev";
             }
         }
     }
