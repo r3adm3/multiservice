@@ -24,7 +24,7 @@ stages:
       displayName: Build an image
       inputs:
         containerRegistry: 'Home Registry'
-        repository: 'multiservice_addAndDblService'
+        repository: 'multiservice_addAndDblSvc'
         command: 'buildAndPush'
         Dockerfile: '**/addAndDblService/dockerfile'
         tags: |
