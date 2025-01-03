@@ -10,25 +10,19 @@ Should work on Windows and Macs (possibly Linux, not tried it yet)
 Clone the repo.
 
 Dependencies:-
-Docker CE | 4.5.0 (74594) 
-VirtualBox | 6.1.32 r149290
-Minikube | 1.25.1
-Dotnet SDK 6.0 | 6.0.100
-Python 3 | 3.6.9
-Helm | 3.7.1
+Docker CE | 4.23.0 (120376) 
+VirtualBox | 6.1.32 r149290 *
+Minikube | 1.25.1 * 
+Dotnet SDK 9.0 | 9.0.101
+Python 3 | 3.12.0
+Helm | 3.7.1 * 
 
 Any of the component microservices can be tested and run individually with a simple by cd'ing into its directory. Check the Readme.md for details on runtime, compile and docker build instructions
 
 To build and run all containers that comprise this solution using docker-compose:
 
 ```docker
-docker-compose up --build
-```
-
-or (rather than build each container locally, use the docker container version of each container)
-
-```docker
-docker-compose -f docker-compose-from-lib.yml up
+docker compose up --no-deps --build
 ```
 
 Test should be able to be run using a browser, and going to <http://localhost:18080>  
@@ -36,7 +30,7 @@ Test should be able to be run using a browser, and going to <http://localhost:18
 ...and cleanup
 
 ```docker
-docker-compose down
+docker compose rm -f  
 ```
 
 To run all containers that comprise this solution using minikube:

@@ -1,27 +1,28 @@
 using System.Diagnostics;
+using System;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Configuration;
+
 using frontEnd2.Models;
 
 namespace frontEnd2.Controllers;
 
 public class HomeController : Controller
 {
-    /*
-    private readonly ILogger<HomeController>? _logger;
-
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
-    IConfiguration? _configuration;
+    private readonly IConfiguration Configuration;
 
     public HomeController(IConfiguration configuration)
     {
-        _configuration = configuration;
-    } 
-    */
+        Configuration = configuration;
+    }
+
     public IActionResult Index()
     {
+
+            var myKey = Configuration["envValue"];
+
+            Console.WriteLine("info: (in HomeController.cs), env key is " + myKey);
             ViewBag.kubeEnv = Environment.GetEnvironmentVariable("KUBEENV");
             //ViewBag.myData = _configuration["Logging:myFirstValue"];
             if (ViewBag.kubeEnv == "true"){
@@ -31,10 +32,10 @@ public class HomeController : Controller
                 ViewBag.addanddblServiceLink = "/api/Math?op=addanddbl";
                
             } else {
-              //  ViewBag.addServiceLink = _configuration["Logging:addServiceLink"];
-              //  ViewBag.minusServiceLink = _configuration["Logging:minusServiceLink"];
-              //  ViewBag.multiplyServiceLink = _configuration["Logging:multiplyServiceLink"];
-               // ViewBag.addanddblServiceLink = _configuration["Logging:addanddblServiceLink"];
+                ViewBag.addServiceLink = Configuration["addServiceLink"];
+                ViewBag.minusServiceLink = Configuration["minusServiceLink"];
+                ViewBag.multiplyServiceLink = Configuration["multiplyServiceLink"];
+                ViewBag.addanddblServiceLink = Configuration["addanddblServiceLink"];
             }
             return View();
     }
