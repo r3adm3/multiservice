@@ -24,9 +24,9 @@ stages:
       displayName: Build an image
       inputs:
         containerRegistry: 'Home Registry'
-        repository: 'addAndDblService'
+        repository: 'multiservice_addAndDblService'
         command: 'buildAndPush'
-        Dockerfile: '**/addAndDblService/Dockerfile'
+        Dockerfile: '**/addAndDblService/dockerfile'
         tags: |
           $(tag)
           kashkaval-dev
